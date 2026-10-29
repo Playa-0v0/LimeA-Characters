@@ -20,6 +20,10 @@ LimeA 角色商店的公开角色卡仓库。每张角色卡包含人格提示�
 - 应用内：在 LimeA 打开「设置 → 角色商店」，按作品浏览并安装。
 - 离线：下载 `.limea` 文件后在 LimeA 中导入，导入入口以当前版本为准。
 
+## 角色制作技能
+
+[skills/limea-character-creator](skills/limea-character-creator/SKILL.md) 是制作与发布角色卡的技能，覆盖人设、台词示例、世界书、音色绑定和发布流程。把该目录加入你所用代理的技能目录即可直接使用，详细规则见 [SKILL.md](skills/limea-character-creator/SKILL.md)。
+
 ## 参与贡献
 
 - 提交角色卡前阅读[贡献规范](CONTRIBUTING.md)，其中包含角色卡字段、容量限制、打包与清单更新、PR 要求和评审清单。
