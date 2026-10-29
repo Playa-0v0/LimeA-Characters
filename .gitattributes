@@ -1,4 +1,7 @@
 .gitattributes text eol=lf
+.gitignore text eol=lf
 *.md text eol=lf
 *.json text eol=lf
 *.limea binary
+*.py text eol=lf
+*.yml text eol=lf
