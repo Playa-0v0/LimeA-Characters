@@ -17,6 +17,7 @@ community.json                    角色标识与议题编号的映射（自动�
     assets/                       头像、封面等图片
   <角色标识>.limea                可导入单文件（由制作目录打包）
   <角色标识>-cover.webp           商店封面预览（可选）
+icons/                            作品图标（README 展示用）
 scripts/                          自动化脚本
 tests/                            自动化测试
 ```
