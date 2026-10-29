@@ -2,9 +2,13 @@
   "format": "limea-character",
   "formatVersion": 1,
   "id": "org.limea.characters.honkai-star-rail.cyrene",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "name": "昔涟",
   "description": "《崩坏：星穹铁道》角色昔涟，包含人格设定、台词示例与世界书。",
+  "author": {
+    "name": "Playa",
+    "url": "https://github.com/Playa-0v0"
+  },
   "tags": [],
   "files": [
     {
