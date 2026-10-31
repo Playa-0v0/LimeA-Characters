@@ -4,22 +4,23 @@
 
 ## 收录角色
 
-<h2>
-  <img src="icons/honkai-star-rail.webp" width="28" alt="崩坏：星穹铁道图标">
-  崩坏：星穹铁道
-</h2>
-
-<table width="100%">
+<table>
   <thead>
     <tr>
-      <th width="12%" align="center">立绘</th>
-      <th width="18%" align="left">角色</th>
-      <th width="36%" align="left">角色卡</th>
-      <th width="17%" align="left">作者</th>
-      <th width="17%" align="left">安装</th>
+      <th align="center">立绘</th>
+      <th align="left">角色</th>
+      <th align="left">角色卡</th>
+      <th align="left">作者</th>
+      <th align="left">安装</th>
     </tr>
   </thead>
   <tbody>
+    <tr>
+      <td colspan="5" align="left">
+        <img src="icons/honkai-star-rail.webp" width="28" alt="崩坏：星穹铁道图标">
+        <strong>崩坏：星穹铁道</strong>
+      </td>
+    </tr>
     <tr>
       <td align="center"><img src="honkai-star-rail/cyrene-cover.webp" width="72" alt="昔涟立绘"></td>
       <td align="left"><strong><a href="honkai-star-rail/cyrene/character.json">昔涟</a></strong></td>
@@ -27,25 +28,12 @@
       <td align="left"><a href="https://github.com/Playa-0v0">Playa</a></td>
       <td align="left"><a href="honkai-star-rail/cyrene.limea">下载 .limea</a></td>
     </tr>
-  </tbody>
-</table>
-
-<h2>
-  <img src="icons/honkai-impact-3.webp" width="28" alt="崩坏3图标">
-  崩坏3
-</h2>
-
-<table width="100%">
-  <thead>
     <tr>
-      <th width="12%" align="center">立绘</th>
-      <th width="18%" align="left">角色</th>
-      <th width="36%" align="left">角色卡</th>
-      <th width="17%" align="left">作者</th>
-      <th width="17%" align="left">安装</th>
+      <td colspan="5" align="left">
+        <img src="icons/honkai-impact-3.webp" width="28" alt="崩坏3图标">
+        <strong>崩坏3</strong>
+      </td>
     </tr>
-  </thead>
-  <tbody>
     <tr>
       <td align="center"><img src="honkai-impact-3/seele-cover.webp" width="72" alt="希儿·芙乐艾立绘"></td>
       <td align="left"><strong><a href="honkai-impact-3/seele/character.json">希儿·芙乐艾</a></strong></td>
