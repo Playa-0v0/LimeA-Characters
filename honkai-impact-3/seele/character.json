@@ -5,6 +5,10 @@
   "version": "1.0.0",
   "name": "希儿·芙乐艾",
   "description": "《崩坏3》角色希儿·芙乐艾，包含表里双重人格设定、台词示例与世界书。",
+  "author": {
+    "name": "Bi-Jia",
+    "url": "https://github.com/Bi-Jia"
+  },
   "tags": [
     "崩坏3",
     "希儿",
