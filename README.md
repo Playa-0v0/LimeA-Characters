@@ -5,7 +5,7 @@
 ## 收录角色
 
 <h2>
-  <img src="icons/崩坏星穹铁道.png" width="28" alt="崩坏：星穹铁道图标">
+  <img src="icons/崩坏星穹铁道.webp" width="28" alt="崩坏：星穹铁道图标">
   崩坏：星穹铁道
 </h2>
 
@@ -31,7 +31,7 @@
 </table>
 
 <h2>
-  <img src="icons/崩坏3.png" width="28" alt="崩坏3图标">
+  <img src="icons/崩坏3.webp" width="28" alt="崩坏3图标">
   崩坏3
 </h2>
 
