@@ -17,6 +17,23 @@
           }
         }
       ]
+    },
+    {
+      "id": "honkai-impact-3",
+      "name": "崩坏3",
+      "characters": [
+        {
+          "id": "org.limea.characters.honkai-impact-3.seele",
+          "name": "希儿·芙乐艾",
+          "description": "《崩坏3》角色希儿·芙乐艾，包含表里双重人格设定、台词示例与世界书。",
+          "archive": "honkai-impact-3/seele.limea",
+          "sha256": "c11f84a90a63074cf12f37ff62a1eaba78de4b96f23067f1d4b2435ce7694205",
+          "cover": {
+            "path": "honkai-impact-3/seele-cover.webp",
+            "sha256": "a7e08b1d67e3a8d759440bc29511688caafe2318e77ba28eb8f7207968579a16"
+          }
+        }
+      ]
     }
   ]
 }
