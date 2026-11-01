@@ -68,6 +68,33 @@ async function cleanup(root) {
   );
   await rm(root, { recursive: true, force: true });
 }
+
+test("不同本机时区生成相同的角色包和清单", async () => {
+  const root = await fixture();
+  const previous = process.env.TZ;
+  try {
+    process.env.TZ = "Asia/Shanghai";
+    await buildCharacters(root);
+    const original = await readFile(
+      join(root, "new-work/characters/new-role/new-role.limea"),
+    );
+    for (const timezone of ["Etc/UTC", "America/New_York"]) {
+      process.env.TZ = timezone;
+      await buildCharacters(root, true);
+      await buildCharacters(root);
+      assert.deepEqual(
+        await readFile(
+          join(root, "new-work/characters/new-role/new-role.limea"),
+        ),
+        original,
+      );
+    }
+  } finally {
+    if (previous === undefined) delete process.env.TZ;
+    else process.env.TZ = previous;
+    await cleanup(root);
+  }
+});
 test("新增作品只需数据声明，构建和校验稳定且保持讨论映射", async () => {
   const root = await fixture();
   try {

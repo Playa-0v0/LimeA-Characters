@@ -55,7 +55,9 @@ async function archive(files) {
   const zip = new ZipFile();
   for (const name of [...files.keys()].sort())
     zip.addBuffer(files.get(name), name, {
-      mtime: new Date("2020-01-01T00:00:00Z"),
+      // DOS 时间按本地时区编码；固定本地日期并禁用 UTC 扩展，跨时区生成相同字节。
+      mtime: new Date(2020, 0, 1),
+      forceDosTimestamp: true,
       mode: 0o100644,
     });
   zip.end();
