@@ -34,12 +34,15 @@ example-character/
   },
   "files": [],
   "extensions": {
-    "limea.dialogueExamples": ["prompts/dialogue.md"]
+    "limea.dialogueExamples": ["prompts/dialogue.md"],
+    "limea.work": { "id": "example-work", "name": "示例作品" }
   }
 }
 ```
 
 `id` 是稳定角色标识，1–128 位字母、数字、点、下划线或连字符，首位为字母或数字；新角色使用不会与其他角色冲突的标识，更新已有卡时保留原值。`version` 是语义化版本号。固定文件按 `prompts.fixed` 的顺序每轮加载；世界书文件在 `prompts.worldbooks` 中声明。示例文件既在 `fixed` 中，也在 `extensions.limea.dialogueExamples` 中，以便界面识别列表。不要把新格式的 `prompts` 和旧格式 `files` 中的 `system`、`soul`、`voiceExamples`、`worldbook` 或 `fixed` 提示词声明混用。
+
+作品声明用于分类和图标匹配，不注入模型。发布到角色仓库时，标识和名称须与 `works.json` 一致；源文件放 `<作品>/characters_dev/<角色>/`，运行仓库构建生成正式文件。未知作品的本地卡仍可导入，缺少作品声明的旧卡显示未分类。
 
 每个文件只声明一次；已声明文件必须存在，不能带未声明的额外文件。`files` 用于声明可选图片或说明文件：例如 `{"path":"assets/avatar.png","role":"avatar"}`、`{"path":"assets/cover.webp","role":"cover"}` 或 `{"path":"README.md","role":"readme"}`。头像和封面各最多一份；图片支持 PNG、JPEG、WebP。路径为相对路径，用 `/` 分隔；不要使用绝对路径、`..`、反斜杠、控制字符、Windows 保留名称或仅大小写不同的重复路径。正文为 UTF-8 文本，清单为标准 JSON，不使用注释或尾逗号。
 

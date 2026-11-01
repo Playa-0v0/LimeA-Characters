@@ -1,0 +1,17 @@
+{
+  "name": "limea-characters",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "build": "node scripts/build-characters.mjs",
+    "check": "node scripts/build-characters.mjs --check",
+    "test": "node --test tests/build-characters.test.mjs"
+  },
+  "devDependencies": {
+    "sharp": "0.35.5",
+    "yazl": "3.3.1"
+  }
+}

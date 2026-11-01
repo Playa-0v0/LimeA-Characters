@@ -1,0 +1,45 @@
+{
+  "format": "limea-character",
+  "formatVersion": 1,
+  "id": "org.limea.characters.honkai-star-rail.cyrene",
+  "version": "1.0.2",
+  "name": "昔涟",
+  "description": "《崩坏：星穹铁道》角色昔涟，包含人格设定、台词示例与世界书。",
+  "author": {
+    "name": "Playa",
+    "url": "https://github.com/Playa-0v0"
+  },
+  "tags": [],
+  "files": [
+    {
+      "path": "assets/avatar.png",
+      "role": "avatar"
+    },
+    {
+      "path": "assets/cover.jpg",
+      "role": "cover"
+    }
+  ],
+  "prompts": {
+    "fixed": [
+      "prompts/soul.md",
+      "prompts/reply-style.md",
+      "prompts/dialogue.md"
+    ],
+    "worldbooks": [
+      "worldbook/Cyrene.md",
+      "worldbook/characters.md",
+      "worldbook/story.md",
+      "worldbook/world.md"
+    ]
+  },
+  "extensions": {
+    "limea.dialogueExamples": [
+      "prompts/dialogue.md"
+    ],
+    "limea.work": {
+      "id": "honkai-star-rail",
+      "name": "崩坏：星穹铁道"
+    }
+  }
+}

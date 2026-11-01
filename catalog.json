@@ -9,11 +9,11 @@
           "id": "org.limea.characters.honkai-star-rail.cyrene",
           "name": "昔涟",
           "description": "《崩坏：星穹铁道》角色昔涟，包含人格设定、台词示例与世界书。",
-          "archive": "honkai-star-rail/cyrene.limea",
-          "sha256": "940f4d46addcf168f7144b82a76277b6abfc16b85782035036afc651b358ed98",
+          "archive": "honkai-star-rail/characters/cyrene/cyrene.limea",
+          "sha256": "7b6ab85bf7d1789321b70c36e1a2c9cb36ba33668575cc926bf62aab337d8b66",
           "cover": {
-            "path": "honkai-star-rail/cyrene-cover.webp",
-            "sha256": "5758515f564c8953fe084cb46f96338e20bb147ec0bc5db8f35f2ddb4b8dd5e6"
+            "path": "honkai-star-rail/characters/cyrene/cover.webp",
+            "sha256": "849f8f58370840a0305affaf09e3ce613f02f9cdcfb04dfbc8f75314146c961b"
           }
         }
       ]
@@ -26,11 +26,11 @@
           "id": "org.limea.characters.honkai-impact-3.seele",
           "name": "希儿·芙乐艾",
           "description": "《崩坏3》角色希儿·芙乐艾，包含表里双重人格设定、台词示例与世界书。",
-          "archive": "honkai-impact-3/seele.limea",
-          "sha256": "ffa90797ce889c7ec9cc033a8201997d52b951d8abbfa134048d94b0bd685b0d",
+          "archive": "honkai-impact-3/characters/seele/seele.limea",
+          "sha256": "95f50c1ad8767b751c1e3b82a6ea7ea93dfcff19b0bad1f009e59fb1a711796d",
           "cover": {
-            "path": "honkai-impact-3/seele-cover.webp",
-            "sha256": "a7e08b1d67e3a8d759440bc29511688caafe2318e77ba28eb8f7207968579a16"
+            "path": "honkai-impact-3/characters/seele/cover.webp",
+            "sha256": "8b62ee4449e0c01a37a3d279e494243b4a17d527110b9c7e732b5761ac48b152"
           }
         }
       ]

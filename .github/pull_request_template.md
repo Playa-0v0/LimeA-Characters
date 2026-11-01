@@ -22,6 +22,8 @@
 - [ ] `catalog.json` 的 `sha256` 与实际 `.limea` 文件摘要一致
 - [ ] 更新角色保留了 `id` 并递增了 `version`
 - [ ] 容量未超过限制，没有临时文件、符号链接或加密条目
+- [ ] `npm test`、`npm run check` 通过，已运行构建同步正式卡、预览、清单和首页
+- [ ] 作品声明与 `works.json` 一致，新增图标位于 `icons`
 - [ ] `python -m unittest discover -s tests -p 'test_*.py' -v` 通过
 
 ## 确认

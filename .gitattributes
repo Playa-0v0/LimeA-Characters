@@ -5,3 +5,7 @@
 *.limea binary
 *.py text eol=lf
 *.yml text eol=lf
+*.mjs text eol=lf
+*.webp binary
+*.png binary
+*.jpg binary

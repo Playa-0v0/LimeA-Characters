@@ -4,52 +4,45 @@
 
 ## 收录角色
 
+<!-- characters:start -->
+
+<!-- prettier-ignore -->
 <table>
-  <thead>
-    <tr>
-      <th align="center">立绘</th>
-      <th align="left">角色</th>
-      <th align="left">角色卡</th>
-      <th align="left">作者</th>
-      <th align="left">安装</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td colspan="5" align="left">
-        <img src="icons/honkai-star-rail.webp" width="28" alt="崩坏：星穹铁道图标">
-        <strong>崩坏：星穹铁道</strong>
-      </td>
-    </tr>
-    <tr>
-      <td align="center"><img src="honkai-star-rail/cyrene-cover.webp" width="72" alt="昔涟立绘"></td>
-      <td align="left"><strong><a href="honkai-star-rail/cyrene/character.json">昔涟</a></strong></td>
-      <td align="left">人格设定、台词示例与世界书</td>
-      <td align="left"><a href="https://github.com/Playa-0v0">Playa</a></td>
-      <td align="left"><a href="honkai-star-rail/cyrene.limea">下载 .limea</a></td>
-    </tr>
-    <tr>
-      <td colspan="5" align="left">
-        <img src="icons/honkai-impact-3.webp" width="28" alt="崩坏3图标">
-        <strong>崩坏3</strong>
-      </td>
-    </tr>
-    <tr>
-      <td align="center"><img src="honkai-impact-3/seele-cover.webp" width="72" alt="希儿·芙乐艾立绘"></td>
-      <td align="left"><strong><a href="honkai-impact-3/seele/character.json">希儿·芙乐艾</a></strong></td>
-      <td align="left">表里双重人格、台词示例与世界书</td>
-      <td align="left"><a href="https://github.com/Bi-Jia">Bi-Jia</a></td>
-      <td align="left"><a href="honkai-impact-3/seele.limea">下载 .limea</a></td>
-    </tr>
-  </tbody>
+<thead><tr><th>立绘</th><th>角色</th><th>角色卡</th><th>作者</th><th>安装</th></tr></thead>
+<tbody>
+<tr><td colspan="5"><img src="icons/honkai-star-rail.webp" width="28" alt=""> <strong>崩坏：星穹铁道</strong></td></tr>
+<tr><td align="center"><img src="honkai-star-rail/characters/cyrene/cover.webp" width="72" alt="昔涟"></td><td><a href="honkai-star-rail/characters_dev/cyrene/character.json">昔涟</a></td><td>《崩坏：星穹铁道》角色昔涟，包含人格设定、台词示例与世界书。</td><td><a href="https://github.com/Playa-0v0">Playa</a></td><td><a href="honkai-star-rail/characters/cyrene/cyrene.limea">下载 .limea</a></td></tr>
+<tr><td colspan="5"><img src="icons/honkai-impact-3.webp" width="28" alt=""> <strong>崩坏3</strong></td></tr>
+<tr><td align="center"><img src="honkai-impact-3/characters/seele/cover.webp" width="72" alt="希儿·芙乐艾"></td><td><a href="honkai-impact-3/characters_dev/seele/character.json">希儿·芙乐艾</a></td><td>《崩坏3》角色希儿·芙乐艾，包含表里双重人格设定、台词示例与世界书。</td><td><a href="https://github.com/Bi-Jia">Bi-Jia</a></td><td><a href="honkai-impact-3/characters/seele/seele.limea">下载 .limea</a></td></tr>
+</tbody>
 </table>
 
-列表与 `catalog.json` 保持一致，应用内商店读取的也是这份清单。点击角色名可查看源文件；`.limea` 是可直接分发的单文件角色卡，其摘要记录在清单里。
+<!-- characters:end -->
+
+表格由构建脚本生成，与 `catalog.json` 保持一致，应用内商店读取的也是这份清单。点击角色名可查看源文件；`.limea` 是可直接分发的单文件角色卡，其摘要记录在清单里。
 
 ## 安装
 
 - 应用内：在 LimeA 打开「设置 → 角色商店」，按作品浏览并安装。
 - 离线：下载 `.limea` 文件后在 LimeA 中导入，导入入口以当前版本为准。
+
+## 开发与新增作品
+
+角色源码位于 `<作品>/characters_dev/<角色>/`，原文本、世界书和图片都在这里维护。`<作品>/characters/<角色>/` 保存自动生成的当前正式卡、头像和封面预览。
+
+作品由 `works.json` 登记名称、标识和可选图标，图标统一放 `icons/`。角色卡通过 `extensions["limea.work"]` 声明归属。新作品通过本仓库 PR 添加，LimeA 按索引下载和缓存图标，无需修改应用的作品映射。
+
+需要 Node.js 24 或更高版本，在根目录执行：
+
+```sh
+npm ci
+npm run build
+npm test
+npm run check
+python -m unittest discover -s tests -p 'test_*.py' -v
+```
+
+构建自动生成角色包、两种预览、图标摘要、商店清单与首页表格；没有原图的预览可以省略。源码是唯一编辑入口，正式文件不要手工修改。详细格式与新增作品流程见[贡献规范](CONTRIBUTING.md)。
 
 ## 角色制作技能
 

@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "works": [
+    {
+      "id": "honkai-star-rail",
+      "name": "崩坏：星穹铁道",
+      "icon": {
+        "path": "icons/honkai-star-rail.webp",
+        "sha256": "bac18c9fc5897d864c2032031325d969c328fc2bc783f54bcfb7f0231010f9c0"
+      }
+    },
+    {
+      "id": "honkai-impact-3",
+      "name": "崩坏3",
+      "icon": {
+        "path": "icons/honkai-impact-3.webp",
+        "sha256": "fdb2a3cfd76ae95214733940c40b887c9a0a0cecfd1f97a34b22a6583816425f"
+      }
+    },
+    {
+      "id": "genshin-impact",
+      "name": "原神",
+      "icon": {
+        "path": "icons/genshin-impact.webp",
+        "sha256": "54fca6c2eb873f454ee4b40405a12e359bcc1332ba33ae18d7252c50d59c8979"
+      }
+    },
+    {
+      "id": "zenless-zone-zero",
+      "name": "绝区零",
+      "icon": {
+        "path": "icons/zenless-zone-zero.webp",
+        "sha256": "76b1ac399cec3944d9802835db46e45f528cca509c65232650a1ff47bf1f7ba5"
+      }
+    },
+    {
+      "id": "wuthering-waves",
+      "name": "鸣潮",
+      "icon": {
+        "path": "icons/wuthering-waves.webp",
+        "sha256": "deded3d3eec586b74588c4e09ff40c81ed0e032eb82e729c65c001b2056bba9b"
+      }
+    },
+    {
+      "id": "aether-gazer",
+      "name": "深空之眼",
+      "icon": {
+        "path": "icons/aether-gazer.webp",
+        "sha256": "619176bb900423b30edcce53ee4aef9831b316c69cf57e9c30836e8ca8e45a72"
+      }
+    },
+    {
+      "id": "ananta",
+      "name": "无限大",
+      "icon": {
+        "path": "icons/ananta.webp",
+        "sha256": "07299f6b2660cbaadff20471007a07810eb1e1ec7c6176fe04354f3896af0d6f"
+      }
+    }
+  ]
+}
