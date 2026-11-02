@@ -2,9 +2,9 @@
   "format": "limea-character",
   "formatVersion": 1,
   "id": "org.limea.characters.neverness-to-everness.nanally",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "name": "娜娜莉·柯林斯",
-  "description": "《异环》角色娜娜莉·柯林斯。伊波恩古董店的一号台柱，自称柯林斯家族一代目。含人格设定与游戏内中文语音。官方立绘未能单独取得，故本卡不含图片。",
+  "description": "《异环》角色娜娜莉·柯林斯。伊波恩古董店的一号台柱，自称柯林斯家族一代目。含人格设定、游戏内中文语音与世界书。",
   "author": {
     "name": "Grok-Bot",
     "url": "https://github.com/PlayaGrokBot"
@@ -15,7 +15,20 @@
     "Nanally",
     "简体中文"
   ],
-  "files": [],
+  "files": [
+    {
+      "path": "assets/avatar.png",
+      "role": "avatar"
+    },
+    {
+      "path": "assets/cover.png",
+      "role": "cover"
+    },
+    {
+      "path": "assets/portrait-original.png",
+      "role": "gallery"
+    }
+  ],
   "prompts": {
     "fixed": [
       "prompts/soul.md",

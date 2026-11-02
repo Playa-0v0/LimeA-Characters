@@ -98,9 +98,13 @@
         {
           "id": "org.limea.characters.neverness-to-everness.nanally",
           "name": "娜娜莉·柯林斯",
-          "description": "《异环》角色娜娜莉·柯林斯。伊波恩古董店的一号台柱，自称柯林斯家族一代目。含人格设定与游戏内中文语音。官方立绘未能单独取得，故本卡不含图片。",
+          "description": "《异环》角色娜娜莉·柯林斯。伊波恩古董店的一号台柱，自称柯林斯家族一代目。含人格设定、游戏内中文语音与世界书。",
           "archive": "neverness-to-everness/characters/nanally/nanally.limea",
-          "sha256": "ae3c2cb0f463ac2de41c495c07ec2ae05461cee9124b455e8a22ad4dba4c7f22"
+          "sha256": "64490a3fc110108018e502a9042f70904581fc891bcd96c20134327ff8451265",
+          "cover": {
+            "path": "neverness-to-everness/characters/nanally/cover.webp",
+            "sha256": "8e918b4f1622ceddb0d20725170a30abfeed8018854bcbe68e1bd96c6660a238"
+          }
         }
       ]
     }
