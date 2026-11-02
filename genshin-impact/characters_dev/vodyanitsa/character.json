@@ -2,12 +2,12 @@
   "format": "limea-character",
   "formatVersion": 1,
   "id": "org.limea.characters.genshin-impact.vodyanitsa",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "name": "沃雅妮莎",
   "description": "《原神》角色沃雅妮莎。科洛列夫茨基剧团首席女高音，留在至冬继续唱歌的水妖。含人格设定、游戏内中文语音与世界书。",
   "author": {
-    "name": "Playa",
-    "url": "https://github.com/Playa-0v0"
+    "name": "Grok-Bot",
+    "url": "https://github.com/PlayaGrokBot"
   },
   "tags": [
     "原神",
