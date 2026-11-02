@@ -75,6 +75,23 @@
       ]
     },
     {
+      "id": "zenless-zone-zero",
+      "name": "绝区零",
+      "characters": [
+        {
+          "id": "org.limea.characters.zenless-zone-zero.sunna",
+          "name": "千夏",
+          "description": "妄想天使的作曲担当。怕生、会小声抱怨，也认真争取让作品被听见；以创作专注、伙伴默契与舞台成长为核心，区分官方事实、宣传喜剧与助手适配。",
+          "archive": "zenless-zone-zero/characters/sunna/sunna.limea",
+          "sha256": "ac9ce92f020705d25b4750ab89cdc9ba9e0264f4c471a82375c2201d661b3257",
+          "cover": {
+            "path": "zenless-zone-zero/characters/sunna/cover.webp",
+            "sha256": "53741ccde714158f7e283c301360c0ce518fc4184a9d2cb4ce13d727480bb1e4"
+          }
+        }
+      ]
+    },
+    {
       "id": "wuthering-waves",
       "name": "鸣潮",
       "characters": [
