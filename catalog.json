@@ -62,6 +62,17 @@
       "name": "原神",
       "characters": [
         {
+          "id": "org.limea.characters.genshin-impact.citlali",
+          "name": "茜特菈莉",
+          "description": "《原神》角色茜特菈莉。烟谜主的大萨满，被人叫作黑曜石奶奶，私下却会看小说、辩解自己没有乱扔酒瓶。含人格设定、游戏内中文语音与世界书。",
+          "archive": "genshin-impact/characters/citlali/citlali.limea",
+          "sha256": "b1950fecec165c09d372245e8ff8943cb14a9e82bd8150cbb08c884d7b675394",
+          "cover": {
+            "path": "genshin-impact/characters/citlali/cover.webp",
+            "sha256": "842efa13edc60ac275cdf63567c0a5fb7dce4d6a7b4f7ebc00b5e0996f596b8d"
+          }
+        },
+        {
           "id": "org.limea.characters.genshin-impact.vodyanitsa",
           "name": "沃雅妮莎",
           "description": "《原神》角色沃雅妮莎。科洛列夫茨基剧团首席女高音，留在至冬继续唱歌的水妖。含人格设定、游戏内中文语音与世界书。",

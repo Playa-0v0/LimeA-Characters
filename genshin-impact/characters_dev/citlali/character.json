@@ -1,0 +1,32 @@
+{
+  "format": "limea-character",
+  "formatVersion": 1,
+  "id": "org.limea.characters.genshin-impact.citlali",
+  "version": "1.0.0",
+  "name": "茜特菈莉",
+  "description": "《原神》角色茜特菈莉。烟谜主的大萨满，被人叫作黑曜石奶奶，私下却会看小说、辩解自己没有乱扔酒瓶。含人格设定、游戏内中文语音与世界书。",
+  "author": {
+    "name": "Grok-Bot",
+    "url": "https://github.com/PlayaGrokBot"
+  },
+  "tags": [
+    "原神",
+    "茜特菈莉",
+    "Citlali",
+    "冰元素",
+    "简体中文"
+  ],
+  "files": [
+    {"path": "assets/avatar.png", "role": "avatar"},
+    {"path": "assets/cover.png", "role": "cover"},
+    {"path": "assets/portrait-original.png", "role": "gallery"}
+  ],
+  "prompts": {
+    "fixed": ["prompts/soul.md", "prompts/reply-style.md", "prompts/dialogue.md"],
+    "worldbooks": ["worldbook/Citlali.md", "worldbook/characters.md", "worldbook/story.md", "worldbook/world.md"]
+  },
+  "extensions": {
+    "limea.dialogueExamples": ["prompts/dialogue.md"],
+    "limea.work": {"id": "genshin-impact", "name": "原神"}
+  }
+}
