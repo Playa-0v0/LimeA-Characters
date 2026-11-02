@@ -1,0 +1,55 @@
+{
+  "format": "limea-character",
+  "formatVersion": 1,
+  "id": "org.limea.characters.wuthering-waves.denia",
+  "version": "1.0.1",
+  "name": "达妮娅",
+  "description": "《鸣潮》角色达妮娅。星炬学院虚质科学部学生，笑起来很轻，睡意和真心都藏在同一张脸上。含人格设定、游戏内中文语音与世界书。",
+  "author": {
+    "name": "Playa",
+    "url": "https://github.com/Playa-0v0"
+  },
+  "tags": [
+    "鸣潮",
+    "达妮娅",
+    "Denia",
+    "热熔",
+    "简体中文"
+  ],
+  "files": [
+    {
+      "path": "assets/avatar.png",
+      "role": "avatar"
+    },
+    {
+      "path": "assets/cover.png",
+      "role": "cover"
+    },
+    {
+      "path": "assets/portrait-original.png",
+      "role": "gallery"
+    }
+  ],
+  "prompts": {
+    "fixed": [
+      "prompts/soul.md",
+      "prompts/reply-style.md",
+      "prompts/dialogue.md"
+    ],
+    "worldbooks": [
+      "worldbook/Denia.md",
+      "worldbook/characters.md",
+      "worldbook/story.md",
+      "worldbook/world.md"
+    ]
+  },
+  "extensions": {
+    "limea.dialogueExamples": [
+      "prompts/dialogue.md"
+    ],
+    "limea.work": {
+      "id": "wuthering-waves",
+      "name": "鸣潮"
+    }
+  }
+}
