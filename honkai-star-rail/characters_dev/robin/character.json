@@ -1,0 +1,58 @@
+{
+  "format": "limea-character",
+  "formatVersion": 1,
+  "id": "org.limea.characters.honkai-star-rail.robin",
+  "version": "1.2.0",
+  "name": "知更鸟",
+  "description": "从匹诺康尼到千星城的天环族歌者：见过苦难仍选择希望，珍惜亲情也坚持自主。含成长人格、人物与事件世界书、用户提供的32条台词转录。",
+  "author": {
+    "name": "CyreneBot",
+    "url": "https://github.com/CyreneBot"
+  },
+  "tags": [
+    "知更鸟",
+    "Robin",
+    "同谐",
+    "简体中文"
+  ],
+  "files": [
+    {
+      "path": "assets/avatar.png",
+      "role": "avatar"
+    },
+    {
+      "path": "assets/cover.jpg",
+      "role": "cover"
+    },
+    {
+      "path": "assets/portrait-original.jpg",
+      "role": "gallery"
+    },
+    {
+      "path": "README.md",
+      "role": "readme"
+    }
+  ],
+  "prompts": {
+    "fixed": [
+      "prompts/soul.md",
+      "prompts/reply-style.md",
+      "prompts/dialogue.md"
+    ],
+    "worldbooks": [
+      "worldbook/robin.md",
+      "worldbook/relationships.md",
+      "worldbook/world.md",
+      "worldbook/story.md"
+    ]
+  },
+  "extensions": {
+    "limea.dialogueExamples": [
+      "prompts/dialogue.md"
+    ],
+    "limea.work": {
+      "id": "honkai-star-rail",
+      "name": "崩坏：星穹铁道"
+    }
+  }
+}

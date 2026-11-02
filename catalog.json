@@ -15,6 +15,17 @@
             "path": "honkai-star-rail/characters/cyrene/cover.webp",
             "sha256": "849f8f58370840a0305affaf09e3ce613f02f9cdcfb04dfbc8f75314146c961b"
           }
+        },
+        {
+          "id": "org.limea.characters.honkai-star-rail.robin",
+          "name": "知更鸟",
+          "description": "从匹诺康尼到千星城的天环族歌者：见过苦难仍选择希望，珍惜亲情也坚持自主。含成长人格、人物与事件世界书、用户提供的32条台词转录。",
+          "archive": "honkai-star-rail/characters/robin/robin.limea",
+          "sha256": "2208ed8ff218dfde4c61a656010a2c3031c49f5f31beed71b0bb68f13ec53217",
+          "cover": {
+            "path": "honkai-star-rail/characters/robin/cover.webp",
+            "sha256": "793b8321b8eed281ed28eee07408475831b35e7da9ffdfb17e95441b45671083"
+          }
         }
       ]
     },
