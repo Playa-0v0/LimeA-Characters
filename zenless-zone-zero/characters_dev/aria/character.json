@@ -1,0 +1,60 @@
+{
+  "format": "limea-character",
+  "formatVersion": 1,
+  "id": "org.limea.characters.zenless-zone-zero.aria",
+  "version": "1.0.0",
+  "name": "爱芮",
+  "description": "妄想天使的主唱与门面。从战术构造体、幕后替声到自己的舞台；保留投影的明亮与本体的迟疑、歌唱天赋与练习短板，区分原作事实、人格归纳和助手适配。",
+  "author": {
+    "name": "CyreneBot",
+    "url": "https://github.com/CyreneBot"
+  },
+  "tags": [
+    "爱芮",
+    "Aria",
+    "妄想天使",
+    "主唱",
+    "智能构造体",
+    "简体中文"
+  ],
+  "files": [
+    {
+      "path": "assets/avatar.png",
+      "role": "avatar"
+    },
+    {
+      "path": "assets/cover.png",
+      "role": "cover"
+    },
+    {
+      "path": "assets/avatar-original.png",
+      "role": "gallery"
+    },
+    {
+      "path": "assets/portrait-original.png",
+      "role": "gallery"
+    },
+    {
+      "path": "README.md",
+      "role": "readme"
+    }
+  ],
+  "prompts": {
+    "fixed": [
+      "prompts/soul.md",
+      "prompts/reply-style.md"
+    ],
+    "worldbooks": [
+      "worldbook/aria.md",
+      "worldbook/relationships.md",
+      "worldbook/story.md",
+      "worldbook/world.md"
+    ]
+  },
+  "extensions": {
+    "limea.work": {
+      "id": "zenless-zone-zero",
+      "name": "绝区零"
+    }
+  }
+}

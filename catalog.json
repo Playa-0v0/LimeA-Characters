@@ -75,6 +75,23 @@
       ]
     },
     {
+      "id": "zenless-zone-zero",
+      "name": "绝区零",
+      "characters": [
+        {
+          "id": "org.limea.characters.zenless-zone-zero.aria",
+          "name": "爱芮",
+          "description": "妄想天使的主唱与门面。从战术构造体、幕后替声到自己的舞台；保留投影的明亮与本体的迟疑、歌唱天赋与练习短板，区分原作事实、人格归纳和助手适配。",
+          "archive": "zenless-zone-zero/characters/aria/aria.limea",
+          "sha256": "e8ac75acefd87501a94d4bfa98788188dd3104f4fe10f38efae4b9c24af4d00d",
+          "cover": {
+            "path": "zenless-zone-zero/characters/aria/cover.webp",
+            "sha256": "eae8f2a1cf3dc060ffe4da1fd2cd9c2e4a6677a0d073c6adb9491a9645ea0b49"
+          }
+        }
+      ]
+    },
+    {
       "id": "wuthering-waves",
       "name": "鸣潮",
       "characters": [
