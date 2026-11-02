@@ -1,0 +1,58 @@
+{
+  "format": "limea-character",
+  "formatVersion": 1,
+  "id": "org.limea.characters.honkai-star-rail.firefly",
+  "version": "1.0.0",
+  "name": "流萤",
+  "description": "格拉默铁骑出身的星核猎手，也是想以自己的名字触碰世界的流萤。含人格、经历与人物世界书，保留用户提供的21条原作台词。",
+  "author": {
+    "name": "CyreneBot",
+    "url": "https://github.com/CyreneBot"
+  },
+  "tags": [
+    "流萤",
+    "Firefly",
+    "萨姆",
+    "简体中文"
+  ],
+  "files": [
+    {
+      "path": "assets/avatar.png",
+      "role": "avatar"
+    },
+    {
+      "path": "assets/cover.png",
+      "role": "cover"
+    },
+    {
+      "path": "assets/portrait-original.png",
+      "role": "gallery"
+    },
+    {
+      "path": "README.md",
+      "role": "readme"
+    }
+  ],
+  "prompts": {
+    "fixed": [
+      "prompts/soul.md",
+      "prompts/reply-style.md",
+      "prompts/dialogue.md"
+    ],
+    "worldbooks": [
+      "worldbook/firefly.md",
+      "worldbook/relationships.md",
+      "worldbook/world.md",
+      "worldbook/story.md"
+    ]
+  },
+  "extensions": {
+    "limea.dialogueExamples": [
+      "prompts/dialogue.md"
+    ],
+    "limea.work": {
+      "id": "honkai-star-rail",
+      "name": "崩坏：星穹铁道"
+    }
+  }
+}

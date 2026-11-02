@@ -17,6 +17,17 @@
           }
         },
         {
+          "id": "org.limea.characters.honkai-star-rail.firefly",
+          "name": "流萤",
+          "description": "格拉默铁骑出身的星核猎手，也是想以自己的名字触碰世界的流萤。含人格、经历与人物世界书，保留用户提供的21条原作台词。",
+          "archive": "honkai-star-rail/characters/firefly/firefly.limea",
+          "sha256": "1c50873dd87d8e308abb767b2ab3f87d8a55b1783cfe60f6c94ab23598b97382",
+          "cover": {
+            "path": "honkai-star-rail/characters/firefly/cover.webp",
+            "sha256": "009832068b57fc07c4e85311fd9c1e5e768748f6ca447fb1b2991c6130166fb0"
+          }
+        },
+        {
           "id": "org.limea.characters.honkai-star-rail.robin",
           "name": "知更鸟",
           "description": "从匹诺康尼到千星城的天环族歌者：见过苦难仍选择希望，珍惜亲情也坚持自主。含成长人格、人物与事件世界书、用户提供的32条台词转录。",
