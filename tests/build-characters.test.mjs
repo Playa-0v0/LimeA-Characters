@@ -165,3 +165,57 @@ test("拒绝错误作品归属、未声明文件和重复作品，失败时不�
     await cleanup(root);
   }
 });
+
+test("首页单独显示 Dot-GPT，保留 CyreneBot 账号链接和角色元数据", async () => {
+  const root = await fixture();
+  try {
+    const path = join(root, "new-work/characters_dev/new-role/character.json");
+    const manifest = JSON.parse(await readFile(path, "utf8"));
+    manifest.author = {
+      name: "CyreneBot",
+      url: "https://github.com/CyreneBot",
+    };
+    const source = JSON.stringify(manifest);
+    await writeFile(path, source);
+    await buildCharacters(root);
+    assert.match(
+      await readFile(join(root, "README.md"), "utf8"),
+      /<a href="https:\/\/github\.com\/CyreneBot">Dot-GPT<\/a>/,
+    );
+    assert.equal(await readFile(path, "utf8"), source);
+    const archivePath = join(root, "new-work/characters/new-role/new-role.limea");
+    const archive = await readFile(archivePath);
+    const catalog = await readFile(join(root, "catalog.json"));
+    await buildCharacters(root, true);
+    await buildCharacters(root);
+    assert.deepEqual(await readFile(archivePath), archive);
+    assert.deepEqual(await readFile(join(root, "catalog.json")), catalog);
+    assert.equal(await readFile(path, "utf8"), source);
+  } finally {
+    await cleanup(root);
+  }
+});
+
+test("首页显示名映射不影响其他作者或同名的不同账号", async () => {
+  const root = await fixture();
+  try {
+    const path = join(root, "new-work/characters_dev/new-role/character.json");
+    const manifest = JSON.parse(await readFile(path, "utf8"));
+    for (const author of [
+      { name: "Playa", url: "https://github.com/Playa-0v0" },
+      { name: "CyreneBot", url: "https://github.com/another-account" },
+      { name: "CyreneBot" },
+      { name: "自定义署名", url: "https://github.com/CyreneBot" },
+    ]) {
+      await writeFile(path, JSON.stringify({ ...manifest, author }));
+      await buildCharacters(root);
+      const readme = await readFile(join(root, "README.md"), "utf8");
+      assert.doesNotMatch(readme, /Dot-GPT/);
+      assert.ok(readme.includes(author.name));
+      if (author.url) assert.ok(readme.includes(`href="${author.url}"`));
+      await buildCharacters(root, true);
+    }
+  } finally {
+    await cleanup(root);
+  }
+});

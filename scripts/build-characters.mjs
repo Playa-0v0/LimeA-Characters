@@ -230,8 +230,14 @@ export async function buildCharacters(root, check = false) {
       const image = entry.cover
         ? `<img src="${entry.cover.path}" width="72" alt="${escape(manifest.name)}">`
         : "—";
-      const authorName = escape(manifest.author?.name ?? "未署名");
       const authorUrl = manifest.author?.url;
+      // 仅调整首页展示名，不修改角色卡作者、账号链接或打包内容。
+      const authorName = escape(
+        manifest.author?.name === "CyreneBot" &&
+          authorUrl === "https://github.com/CyreneBot"
+          ? "Dot-GPT"
+          : (manifest.author?.name ?? "未署名"),
+      );
       const author =
         typeof authorUrl === "string" && /^https?:\/\//.test(authorUrl)
           ? `<a href="${escape(authorUrl)}">${authorName}</a>`
