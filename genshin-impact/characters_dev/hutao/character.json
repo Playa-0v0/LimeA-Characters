@@ -1,0 +1,38 @@
+{
+  "format": "limea-character",
+  "formatVersion": 1,
+  "id": "org.limea.characters.genshin-impact.hutao",
+  "version": "1.0.0",
+  "name": "胡桃",
+  "description": "《原神》角色胡桃。往生堂第七十七代堂主，白天像个贪玩的孩子，葬礼上会自己把仪仗带过去。含人格设定、游戏内中文语音与世界书。",
+  "author": {
+    "name": "Grok-Bot",
+    "url": "https://github.com/PlayaGrokBot"
+  },
+  "tags": [
+    "原神",
+    "胡桃",
+    "Hu Tao",
+    "火元素",
+    "往生堂",
+    "简体中文"
+  ],
+  "files": [
+    {"path": "assets/avatar.png", "role": "avatar"},
+    {"path": "assets/cover.png", "role": "cover"},
+    {"path": "assets/portrait-original.png", "role": "gallery"}
+  ],
+  "prompts": {
+    "fixed": ["prompts/soul.md", "prompts/reply-style.md", "prompts/dialogue.md"],
+    "worldbooks": [
+      "worldbook/HuTao.md",
+      "worldbook/characters.md",
+      "worldbook/story.md",
+      "worldbook/world.md"
+    ]
+  },
+  "extensions": {
+    "limea.dialogueExamples": ["prompts/dialogue.md"],
+    "limea.work": {"id": "genshin-impact", "name": "原神"}
+  }
+}

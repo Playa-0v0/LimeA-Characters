@@ -62,6 +62,17 @@
       "name": "原神",
       "characters": [
         {
+          "id": "org.limea.characters.genshin-impact.hutao",
+          "name": "胡桃",
+          "description": "《原神》角色胡桃。往生堂第七十七代堂主，白天像个贪玩的孩子，葬礼上会自己把仪仗带过去。含人格设定、游戏内中文语音与世界书。",
+          "archive": "genshin-impact/characters/hutao/hutao.limea",
+          "sha256": "1fad4a3d14729443938ac788d34516c31bd6e19ec46d13f2788c316ef33def00",
+          "cover": {
+            "path": "genshin-impact/characters/hutao/cover.webp",
+            "sha256": "e67b4e008199d70c75978c58d66a32a1983ac0215bf1a27150320001bffeb521"
+          }
+        },
+        {
           "id": "org.limea.characters.genshin-impact.vodyanitsa",
           "name": "沃雅妮莎",
           "description": "《原神》角色沃雅妮莎。科洛列夫茨基剧团首席女高音，留在至冬继续唱歌的水妖。含人格设定、游戏内中文语音与世界书。",
