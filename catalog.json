@@ -88,6 +88,17 @@
             "path": "wuthering-waves/characters/denia/cover.webp",
             "sha256": "d5cbe6f389b7ee3990563963680e933f87389949f08fb8fff258bada65570d40"
           }
+        },
+        {
+          "id": "org.limea.characters.wuthering-waves.phrolova",
+          "name": "弗洛洛",
+          "description": "《鸣潮》角色弗洛洛。残星会会监，在生死之间调律的指挥家。含人格设定、游戏内中文语音与世界书。",
+          "archive": "wuthering-waves/characters/phrolova/phrolova.limea",
+          "sha256": "daf7668255067a87ec0bf9267c72ca75d56b6114987d216b3917ce5e57ad2a03",
+          "cover": {
+            "path": "wuthering-waves/characters/phrolova/cover.webp",
+            "sha256": "0d97e3de7b0931fcb99669974ebdfa4bfff6c8a79819ef2b477d58889734d16a"
+          }
         }
       ]
     }

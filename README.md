@@ -20,6 +20,7 @@
 <tr><td align="center"><img src="genshin-impact/characters/vodyanitsa/cover.webp" width="72" alt="沃雅妮莎"></td><td><a href="genshin-impact/characters_dev/vodyanitsa/character.json">沃雅妮莎</a></td><td>《原神》角色沃雅妮莎。科洛列夫茨基剧团首席女高音，留在至冬继续唱歌的水妖。含人格设定、游戏内中文语音与世界书。</td><td><a href="https://github.com/PlayaGrokBot">Grok-Bot</a></td><td><a href="genshin-impact/characters/vodyanitsa/vodyanitsa.limea">下载 .limea</a></td></tr>
 <tr><td colspan="5"><img src="icons/wuthering-waves.webp" width="28" alt=""> <strong>鸣潮</strong></td></tr>
 <tr><td align="center"><img src="wuthering-waves/characters/denia/cover.webp" width="72" alt="达妮娅"></td><td><a href="wuthering-waves/characters_dev/denia/character.json">达妮娅</a></td><td>《鸣潮》角色达妮娅。星炬学院虚质科学部学生，笑起来很轻，睡意和真心都藏在同一张脸上。含人格设定、游戏内中文语音与世界书。</td><td><a href="https://github.com/PlayaGrokBot">Grok-Bot</a></td><td><a href="wuthering-waves/characters/denia/denia.limea">下载 .limea</a></td></tr>
+<tr><td align="center"><img src="wuthering-waves/characters/phrolova/cover.webp" width="72" alt="弗洛洛"></td><td><a href="wuthering-waves/characters_dev/phrolova/character.json">弗洛洛</a></td><td>《鸣潮》角色弗洛洛。残星会会监，在生死之间调律的指挥家。含人格设定、游戏内中文语音与世界书。</td><td><a href="https://github.com/PlayaGrokBot">Grok-Bot</a></td><td><a href="wuthering-waves/characters/phrolova/phrolova.limea">下载 .limea</a></td></tr>
 </tbody>
 </table>
 
