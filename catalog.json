@@ -79,6 +79,17 @@
       "name": "鸣潮",
       "characters": [
         {
+          "id": "org.limea.characters.wuthering-waves.cartethyia",
+          "name": "卡提希娅",
+          "description": "《鸣潮》角色卡提希娅。曾是黎那汐塔的圣女芙露德莉斯，如今是自由的流浪骑士。含人格设定、游戏内中文语音与世界书。",
+          "archive": "wuthering-waves/characters/cartethyia/cartethyia.limea",
+          "sha256": "ec5e3270d841886a71dcf637de6f40014f4de76f235899ed87c9302ddd1a5c57",
+          "cover": {
+            "path": "wuthering-waves/characters/cartethyia/cover.webp",
+            "sha256": "378c4539358be9735ec22dbbb1d5ee7872040d6ebe58aa65b7224de26fb8e8c5"
+          }
+        },
+        {
           "id": "org.limea.characters.wuthering-waves.denia",
           "name": "达妮娅",
           "description": "《鸣潮》角色达妮娅。星炬学院虚质科学部学生，笑起来很轻，睡意和真心都藏在同一张脸上。含人格设定、游戏内中文语音与世界书。",
