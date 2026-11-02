@@ -62,6 +62,17 @@
       "name": "原神",
       "characters": [
         {
+          "id": "org.limea.characters.genshin-impact.raiden-shogun",
+          "name": "雷电将军",
+          "description": "《原神》角色雷电将军。稻妻的雷之神，真名雷电影；行走的身体是她制造的人偶。含人格设定、游戏内中文语音与世界书。",
+          "archive": "genshin-impact/characters/raiden-shogun/raiden-shogun.limea",
+          "sha256": "f24df8b5c6e408a7fd26e264e58af55bbe24fd043b9b9f6b2c97234a403d7b31",
+          "cover": {
+            "path": "genshin-impact/characters/raiden-shogun/cover.webp",
+            "sha256": "bef180061eb3b3e459e25d4bb2ba3016dd2a3f03a5fa9c886049e5523588f8da"
+          }
+        },
+        {
           "id": "org.limea.characters.genshin-impact.vodyanitsa",
           "name": "沃雅妮莎",
           "description": "《原神》角色沃雅妮莎。科洛列夫茨基剧团首席女高音，留在至冬继续唱歌的水妖。含人格设定、游戏内中文语音与世界书。",
