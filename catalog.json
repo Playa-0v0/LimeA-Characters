@@ -88,6 +88,17 @@
             "path": "wuthering-waves/characters/denia/cover.webp",
             "sha256": "d5cbe6f389b7ee3990563963680e933f87389949f08fb8fff258bada65570d40"
           }
+        },
+        {
+          "id": "org.limea.characters.wuthering-waves.sigrika",
+          "name": "西格莉卡",
+          "description": "《鸣潮》角色西格莉卡。星炬学院的罗伊族学生，想成为合格的昭日者，也开始学会把疲惫说给家人听。含人格设定、游戏内中文语音与世界书。",
+          "archive": "wuthering-waves/characters/sigrika/sigrika.limea",
+          "sha256": "c8e217be04f00f12e83d1267ee9a264f0cf617c6548b040366de6bdb76545cbf",
+          "cover": {
+            "path": "wuthering-waves/characters/sigrika/cover.webp",
+            "sha256": "53e4ddb302c7c6a0a493796fb5fc0743b083702a5f11cb920cfec805414377a0"
+          }
         }
       ]
     }
