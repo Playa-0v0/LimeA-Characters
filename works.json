@@ -56,6 +56,14 @@
         "path": "icons/ananta.webp",
         "sha256": "07299f6b2660cbaadff20471007a07810eb1e1ec7c6176fe04354f3896af0d6f"
       }
+    },
+    {
+      "id": "deepseek",
+      "name": "DeepSeek",
+      "icon": {
+        "path": "icons/deepseek.webp",
+        "sha256": "d83360736f9d5692469c7b8a706032a75835872aeccea20d48559d851c74487e"
+      }
     }
   ]
 }

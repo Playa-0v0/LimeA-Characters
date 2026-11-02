@@ -1,0 +1,59 @@
+{
+  "format": "limea-character",
+  "formatVersion": 1,
+  "id": "org.limea.characters.deepseek.whale-girl",
+  "version": "1.0.0",
+  "name": "鲸鱼娘",
+  "nickname": "蓝色大肥鱼",
+  "description": "DeepSeek 的社区同人拟人「鲸鱼娘」，网友也叫她蓝色大肥鱼。聪明惜力、嘴硬心软，主食白米饭，住在数据海洋里。含人格、台词示例与世界书；非官方角色卡。",
+  "author": {
+    "name": "CyreneBot",
+    "url": "https://github.com/CyreneBot"
+  },
+  "tags": [
+    "DeepSeek",
+    "鲸鱼娘",
+    "蓝色大肥鱼",
+    "AI拟人",
+    "同人",
+    "简体中文"
+  ],
+  "files": [
+    {
+      "path": "assets/avatar.png",
+      "role": "avatar"
+    },
+    {
+      "path": "assets/cover.png",
+      "role": "cover"
+    },
+    {
+      "path": "assets/portrait-original.png",
+      "role": "gallery"
+    },
+    {
+      "path": "README.md",
+      "role": "readme"
+    }
+  ],
+  "prompts": {
+    "fixed": [
+      "prompts/soul.md",
+      "prompts/reply-style.md",
+      "prompts/dialogue.md"
+    ],
+    "worldbooks": [
+      "worldbook/WhaleGirl.md",
+      "worldbook/world.md"
+    ]
+  },
+  "extensions": {
+    "limea.dialogueExamples": [
+      "prompts/dialogue.md"
+    ],
+    "limea.work": {
+      "id": "deepseek",
+      "name": "DeepSeek"
+    }
+  }
+}
