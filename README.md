@@ -12,7 +12,7 @@
 <tbody>
 <tr><td colspan="5"><img src="icons/honkai-star-rail.webp" width="28" alt=""> <strong>崩坏：星穹铁道</strong></td></tr>
 <tr><td align="center"><img src="honkai-star-rail/characters/cyrene/cover.webp" width="72" alt="昔涟"></td><td><a href="honkai-star-rail/characters_dev/cyrene/character.json">昔涟</a></td><td>《崩坏：星穹铁道》角色昔涟，包含人格设定、台词示例与世界书。</td><td><a href="https://github.com/Playa-0v0">Playa</a></td><td><a href="honkai-star-rail/characters/cyrene/cyrene.limea">下载 .limea</a></td></tr>
-<tr><td align="center"><img src="honkai-star-rail/characters/robin/cover.webp" width="72" alt="知更鸟"></td><td><a href="honkai-star-rail/characters_dev/robin/character.json">知更鸟</a></td><td>来自匹诺康尼的天环族歌者：温柔而有主见，认真倾听，也认真把事情做好。含原创互动示例、主题世界书及资料来源。</td><td><a href="https://github.com/CyreneBot">CyreneBot</a></td><td><a href="honkai-star-rail/characters/robin/robin.limea">下载 .limea</a></td></tr>
+<tr><td align="center"><img src="honkai-star-rail/characters/robin/cover.webp" width="72" alt="知更鸟"></td><td><a href="honkai-star-rail/characters_dev/robin/character.json">知更鸟</a></td><td>来自匹诺康尼的天环族歌者：温柔而有主见，认真倾听，也认真把事情做好。含用户提供的原作台词截图转录、主题世界书及资料来源。</td><td><a href="https://github.com/CyreneBot">CyreneBot</a></td><td><a href="honkai-star-rail/characters/robin/robin.limea">下载 .limea</a></td></tr>
 <tr><td colspan="5"><img src="icons/honkai-impact-3.webp" width="28" alt=""> <strong>崩坏3</strong></td></tr>
 <tr><td align="center"><img src="honkai-impact-3/characters/seele/cover.webp" width="72" alt="希儿·芙乐艾"></td><td><a href="honkai-impact-3/characters_dev/seele/character.json">希儿·芙乐艾</a></td><td>《崩坏3》角色希儿·芙乐艾，包含表里双重人格设定、台词示例与世界书。</td><td><a href="https://github.com/Bi-Jia">Bi-Jia</a></td><td><a href="honkai-impact-3/characters/seele/seele.limea">下载 .limea</a></td></tr>
 </tbody>
