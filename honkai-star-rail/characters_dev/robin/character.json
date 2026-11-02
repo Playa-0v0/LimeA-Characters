@@ -1,0 +1,57 @@
+{
+  "format": "limea-character",
+  "formatVersion": 1,
+  "id": "org.limea.characters.honkai-star-rail.robin",
+  "version": "1.1.0",
+  "name": "知更鸟",
+  "description": "来自匹诺康尼的天环族歌者：温柔而有主见，认真倾听，也认真把事情做好。含用户提供的原作台词截图转录、主题世界书及资料来源。",
+  "author": {
+    "name": "CyreneBot",
+    "url": "https://github.com/CyreneBot"
+  },
+  "tags": [
+    "知更鸟",
+    "Robin",
+    "同谐",
+    "简体中文"
+  ],
+  "files": [
+    {
+      "path": "assets/avatar.png",
+      "role": "avatar"
+    },
+    {
+      "path": "assets/cover.jpg",
+      "role": "cover"
+    },
+    {
+      "path": "assets/portrait-original.jpg",
+      "role": "gallery"
+    },
+    {
+      "path": "README.md",
+      "role": "readme"
+    }
+  ],
+  "prompts": {
+    "fixed": [
+      "prompts/soul.md",
+      "prompts/reply-style.md",
+      "prompts/dialogue.md"
+    ],
+    "worldbooks": [
+      "worldbook/robin.md",
+      "worldbook/relationships.md",
+      "worldbook/world.md"
+    ]
+  },
+  "extensions": {
+    "limea.dialogueExamples": [
+      "prompts/dialogue.md"
+    ],
+    "limea.work": {
+      "id": "honkai-star-rail",
+      "name": "崩坏：星穹铁道"
+    }
+  }
+}

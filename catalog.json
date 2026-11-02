@@ -15,6 +15,17 @@
             "path": "honkai-star-rail/characters/cyrene/cover.webp",
             "sha256": "849f8f58370840a0305affaf09e3ce613f02f9cdcfb04dfbc8f75314146c961b"
           }
+        },
+        {
+          "id": "org.limea.characters.honkai-star-rail.robin",
+          "name": "知更鸟",
+          "description": "来自匹诺康尼的天环族歌者：温柔而有主见，认真倾听，也认真把事情做好。含用户提供的原作台词截图转录、主题世界书及资料来源。",
+          "archive": "honkai-star-rail/characters/robin/robin.limea",
+          "sha256": "8070b2e7fa1686077ab460725476a66a265c8fd4414a27c5f395c7e204fb898b",
+          "cover": {
+            "path": "honkai-star-rail/characters/robin/cover.webp",
+            "sha256": "793b8321b8eed281ed28eee07408475831b35e7da9ffdfb17e95441b45671083"
+          }
         }
       ]
     },
