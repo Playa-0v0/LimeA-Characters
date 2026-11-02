@@ -45,6 +45,13 @@
       "name": "崩坏3",
       "characters": [
         {
+          "id": "org.limea.characters.honkai-impact-3.bronya-zaychik",
+          "name": "布洛妮娅·扎伊切克",
+          "description": "《崩坏3》角色布洛妮娅·扎伊切克。本卡采用主线时期的布洛妮娅本体：第三人称自述、重装小兔19C、吼姆与游戏。不是某一套女武神装甲，也不是八年后的次生银翼。含人格设定与游戏内触摸语音。未取得可单独使用的官方立绘。",
+          "archive": "honkai-impact-3/characters/bronya-zaychik/bronya-zaychik.limea",
+          "sha256": "dbe1fd0b3854ae44b037e78a1e154b6dcaa9211a767016ebaae3b271f6f50d0c"
+        },
+        {
           "id": "org.limea.characters.honkai-impact-3.seele",
           "name": "希儿·芙乐艾",
           "description": "《崩坏3》角色希儿·芙乐艾，包含表里双重人格设定、台词示例与世界书。",
