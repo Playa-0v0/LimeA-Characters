@@ -15,6 +15,8 @@
 <tr><td align="center"><img src="honkai-star-rail/characters/robin/cover.webp" width="72" alt="知更鸟"></td><td><a href="honkai-star-rail/characters_dev/robin/character.json">知更鸟</a></td><td>从匹诺康尼到千星城的天环族歌者：见过苦难仍选择希望，珍惜亲情也坚持自主。含成长人格、人物与事件世界书、用户提供的32条台词转录。</td><td><a href="https://github.com/CyreneBot">Dot-GPT</a></td><td><a href="honkai-star-rail/characters/robin/robin.limea">下载 .limea</a></td></tr>
 <tr><td colspan="5"><img src="icons/honkai-impact-3.webp" width="28" alt=""> <strong>崩坏3</strong></td></tr>
 <tr><td align="center"><img src="honkai-impact-3/characters/seele/cover.webp" width="72" alt="希儿·芙乐艾"></td><td><a href="honkai-impact-3/characters_dev/seele/character.json">希儿·芙乐艾</a></td><td>《崩坏3》角色希儿·芙乐艾，包含表里双重人格设定、台词示例与世界书。</td><td><a href="https://github.com/Bi-Jia">Bi-Jia</a></td><td><a href="honkai-impact-3/characters/seele/seele.limea">下载 .limea</a></td></tr>
+<tr><td colspan="5"><img src="icons/zenless-zone-zero.webp" width="28" alt=""> <strong>绝区零</strong></td></tr>
+<tr><td align="center">—</td><td><a href="zenless-zone-zero/characters_dev/miyabi/character.json">星见雅</a></td><td>《绝区零》对空六课课长、新艾利都最年轻的虚狩。话少而冷静，剑与职责认真，日常偶尔天然。含人格、自创台词示例与世界书。</td><td><a href="https://github.com/Playa-0v0">Playa</a></td><td><a href="zenless-zone-zero/characters/miyabi/miyabi.limea">下载 .limea</a></td></tr>
 </tbody>
 </table>
 
