@@ -56,6 +56,10 @@
         "path": "icons/ananta.webp",
         "sha256": "07299f6b2660cbaadff20471007a07810eb1e1ec7c6176fe04354f3896af0d6f"
       }
+    },
+    {
+      "id": "neverness-to-everness",
+      "name": "异环"
     }
   ]
 }
