@@ -26,7 +26,7 @@
 <tr><td colspan="5"><strong>异环</strong></td></tr>
 <tr><td align="center"><img src="neverness-to-everness/characters/nanally/cover.webp" width="72" alt="娜娜莉·柯林斯"></td><td><a href="neverness-to-everness/characters_dev/nanally/character.json">娜娜莉·柯林斯</a></td><td>《异环》角色娜娜莉·柯林斯。伊波恩古董店的一号台柱，自称柯林斯家族一代目。含人格设定、游戏内中文语音与世界书。</td><td><a href="https://github.com/PlayaGrokBot">Grok-Bot</a></td><td><a href="neverness-to-everness/characters/nanally/nanally.limea">下载 .limea</a></td></tr>
 <tr><td colspan="5"><strong>狐妖小红娘</strong></td></tr>
-<tr><td align="center"><img src="fox-spirit-matchmaker/characters/dongfang-yuechu/cover.webp" width="72" alt="东方月初"></td><td><a href="fox-spirit-matchmaker/characters_dev/dongfang-yuechu/character.json">东方月初</a></td><td>在涂山长大的东方家少年道士，嘴上爱贫、心里有数。以离山加入一气道盟后的成年形象为交流基线，保留对涂山红红的深情与人妖和平之志。含人格、16条原创风格示例及分阶段世界书。</td><td>Codex</td><td><a href="fox-spirit-matchmaker/characters/dongfang-yuechu/dongfang-yuechu.limea">下载 .limea</a></td></tr>
+<tr><td align="center"><img src="fox-spirit-matchmaker/characters/dongfang-yuechu/cover.webp" width="72" alt="东方月初"></td><td><a href="fox-spirit-matchmaker/characters_dev/dongfang-yuechu/character.json">东方月初</a></td><td>在涂山长大的东方家少年道士，嘴上爱贫、心里有数。以离山加入一气道盟后的成年形象为交流基线，保留对涂山红红的深情与人妖和平之志。含人格、2条有出处的台词短摘及分阶段世界书。</td><td>Codex</td><td><a href="fox-spirit-matchmaker/characters/dongfang-yuechu/dongfang-yuechu.limea">下载 .limea</a></td></tr>
 </tbody>
 </table>
 
