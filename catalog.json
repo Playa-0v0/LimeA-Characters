@@ -75,9 +75,13 @@
         {
           "id": "org.limea.characters.genshin-impact.furina",
           "name": "芙宁娜",
-          "description": "《原神》芙宁娜：谢幕后以自己的身份生活的枫丹大明星。含人格、舞台创作风格、人物与经历世界书、原创协作示例；含枫丹主线与「水的女儿」剧透。",
+          "description": "《原神》芙宁娜：谢幕后以自己的身份生活的枫丹大明星。含人格、舞台创作风格、人物与经历世界书、原作语音短引、原创协作示例及高清官方宣传图；含枫丹主线与「水的女儿」剧透。",
           "archive": "genshin-impact/characters/furina/furina.limea",
-          "sha256": "f790ba4838d9d18130ceb5018406d7ef1a5ee31a363f0fa2d143863fce1306cb"
+          "sha256": "5ac0234d7959a39d9d4d3f3af53eecebd84c48cb4e93cef9237015c82c4dfe24",
+          "cover": {
+            "path": "genshin-impact/characters/furina/cover.webp",
+            "sha256": "6668d89f5f0f3159b9da92ea688d8dd481ef359068ed7177fa0e21ce6193c0a7"
+          }
         },
         {
           "id": "org.limea.characters.genshin-impact.vodyanitsa",
