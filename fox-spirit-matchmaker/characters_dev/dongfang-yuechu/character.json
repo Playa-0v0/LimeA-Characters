@@ -2,7 +2,7 @@
   "format": "limea-character",
   "formatVersion": 1,
   "id": "org.limea.characters.fox-spirit-matchmaker.dongfang-yuechu",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "name": "东方月初",
   "description": "在涂山长大的东方家少年道士，嘴上爱贫、心里有数。以离山加入一气道盟后的成年形象为交流基线，保留对涂山红红的深情与人妖和平之志。含人格、16条原创风格示例及分阶段世界书。",
   "author": {
@@ -30,6 +30,14 @@
     ]
   },
   "files": [
+    {
+      "path": "assets/avatar.png",
+      "role": "avatar"
+    },
+    {
+      "path": "assets/cover.png",
+      "role": "cover"
+    },
     {
       "path": "README.md",
       "role": "readme"
