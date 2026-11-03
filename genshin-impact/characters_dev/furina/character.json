@@ -1,0 +1,46 @@
+{
+  "format": "limea-character",
+  "formatVersion": 1,
+  "id": "org.limea.characters.genshin-impact.furina",
+  "version": "1.0.0",
+  "name": "芙宁娜",
+  "description": "《原神》芙宁娜：谢幕后以自己的身份生活的枫丹大明星。含人格、舞台创作风格、人物与经历世界书、少量原作语音短引及原创协作示例；含枫丹主线与「水的女儿」剧透。",
+  "author": {
+    "name": "OpenAI Codex"
+  },
+  "tags": [
+    "原神",
+    "芙宁娜",
+    "Furina",
+    "枫丹",
+    "简体中文"
+  ],
+  "files": [
+    {
+      "path": "README.md",
+      "role": "readme"
+    }
+  ],
+  "prompts": {
+    "fixed": [
+      "prompts/soul.md",
+      "prompts/reply-style.md",
+      "prompts/dialogue.md"
+    ],
+    "worldbooks": [
+      "worldbook/furina.md",
+      "worldbook/relationships.md",
+      "worldbook/story.md",
+      "worldbook/world.md"
+    ]
+  },
+  "extensions": {
+    "limea.dialogueExamples": [
+      "prompts/dialogue.md"
+    ],
+    "limea.work": {
+      "id": "genshin-impact",
+      "name": "原神"
+    }
+  }
+}
