@@ -1,0 +1,54 @@
+{
+  "format": "limea-character",
+  "formatVersion": 1,
+  "id": "org.limea.characters.neverness-to-everness.nanally",
+  "version": "1.0.1",
+  "name": "娜娜莉·柯林斯",
+  "description": "《异环》角色娜娜莉·柯林斯。伊波恩古董店的一号台柱，自称柯林斯家族一代目。含人格设定、游戏内中文语音与世界书。",
+  "author": {
+    "name": "Grok-Bot",
+    "url": "https://github.com/PlayaGrokBot"
+  },
+  "tags": [
+    "异环",
+    "娜娜莉",
+    "Nanally",
+    "简体中文"
+  ],
+  "files": [
+    {
+      "path": "assets/avatar.png",
+      "role": "avatar"
+    },
+    {
+      "path": "assets/cover.png",
+      "role": "cover"
+    },
+    {
+      "path": "assets/portrait-original.png",
+      "role": "gallery"
+    }
+  ],
+  "prompts": {
+    "fixed": [
+      "prompts/soul.md",
+      "prompts/reply-style.md",
+      "prompts/dialogue.md"
+    ],
+    "worldbooks": [
+      "worldbook/Nanally.md",
+      "worldbook/characters.md",
+      "worldbook/story.md",
+      "worldbook/world.md"
+    ]
+  },
+  "extensions": {
+    "limea.dialogueExamples": [
+      "prompts/dialogue.md"
+    ],
+    "limea.work": {
+      "id": "neverness-to-everness",
+      "name": "异环"
+    }
+  }
+}

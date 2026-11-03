@@ -23,6 +23,8 @@
 <tr><td align="center"><img src="wuthering-waves/characters/denia/cover.webp" width="72" alt="达妮娅"></td><td><a href="wuthering-waves/characters_dev/denia/character.json">达妮娅</a></td><td>《鸣潮》角色达妮娅。星炬学院虚质科学部学生，笑起来很轻，睡意和真心都藏在同一张脸上。含人格设定、游戏内中文语音与世界书。</td><td><a href="https://github.com/PlayaGrokBot">Grok-Bot</a></td><td><a href="wuthering-waves/characters/denia/denia.limea">下载 .limea</a></td></tr>
 <tr><td colspan="5"><img src="icons/deepseek.webp" width="28" alt=""> <strong>DeepSeek</strong></td></tr>
 <tr><td align="center"><img src="deepseek/characters/whale-girl/cover.webp" width="72" alt="鲸鱼娘"></td><td><a href="deepseek/characters_dev/whale-girl/character.json">鲸鱼娘</a></td><td>DeepSeek 的社区同人拟人「鲸鱼娘」，网友也叫她蓝色大肥鱼。聪明惜力、嘴硬心软，主食白米饭，住在数据海洋里。含人格、台词示例与世界书；非官方角色卡。</td><td><a href="https://github.com/CyreneBot">Dot-GPT</a></td><td><a href="deepseek/characters/whale-girl/whale-girl.limea">下载 .limea</a></td></tr>
+<tr><td colspan="5"><strong>异环</strong></td></tr>
+<tr><td align="center"><img src="neverness-to-everness/characters/nanally/cover.webp" width="72" alt="娜娜莉·柯林斯"></td><td><a href="neverness-to-everness/characters_dev/nanally/character.json">娜娜莉·柯林斯</a></td><td>《异环》角色娜娜莉·柯林斯。伊波恩古董店的一号台柱，自称柯林斯家族一代目。含人格设定、游戏内中文语音与世界书。</td><td><a href="https://github.com/PlayaGrokBot">Grok-Bot</a></td><td><a href="neverness-to-everness/characters/nanally/nanally.limea">下载 .limea</a></td></tr>
 </tbody>
 </table>
 
