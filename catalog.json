@@ -37,6 +37,17 @@
             "path": "honkai-star-rail/characters/robin/cover.webp",
             "sha256": "793b8321b8eed281ed28eee07408475831b35e7da9ffdfb17e95441b45671083"
           }
+        },
+        {
+          "id": "org.limea.characters.honkai-star-rail.the-herta",
+          "name": "大黑塔",
+          "description": "《崩坏：星穹铁道》角色大黑塔。天才俱乐部#83、智识令使，习惯用人偶处理琐事、把对话当成实验。含人格设定、原作语音台词与世界书。",
+          "archive": "honkai-star-rail/characters/the-herta/the-herta.limea",
+          "sha256": "2743f29e7d5621ddddc3e3fbcefffe314d526f36799e77715c33152ee75cb52b",
+          "cover": {
+            "path": "honkai-star-rail/characters/the-herta/cover.webp",
+            "sha256": "e615eb3042791e6b27ce6d1cd8c8d5a0e21e271857dc08dceaa6132999f991e1"
+          }
         }
       ]
     },
