@@ -104,14 +104,14 @@
     },
     {
       "id": "deepseek",
-      "name": "DeepSeek",
+      "name": "AI娘",
       "characters": [
         {
           "id": "org.limea.characters.deepseek.whale-girl",
-          "name": "鲸鱼娘",
-          "description": "DeepSeek 的社区同人拟人「鲸鱼娘」，网友也叫她蓝色大肥鱼。聪明惜力、嘴硬心软，主食白米饭，住在数据海洋里。含人格、台词示例与世界书；非官方角色卡。",
+          "name": "蓝色大肥鱼",
+          "description": "DeepSeek 的社区同人拟人「蓝色大肥鱼」，网友也叫她鲸鱼娘。聪明惜力、嘴硬心软，主食白米饭，住在数据海洋里。含人格、台词示例与世界书；非官方角色卡。",
           "archive": "deepseek/characters/whale-girl/whale-girl.limea",
-          "sha256": "c5d2476016f73ad20f47b6bcb74b828d97ad922f90b3755292ff5a6ac29b9fd6",
+          "sha256": "bf632caabbf276c0c9b72ffb48f0b25d4cfe33ce78a7c3a31a3c7b6b2927a2d8",
           "cover": {
             "path": "deepseek/characters/whale-girl/cover.webp",
             "sha256": "4d9b61c20cf07f663339782e3e7e928b73ece586abbc4d9f6778bdb4947c4556"

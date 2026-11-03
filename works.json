@@ -59,7 +59,7 @@
     },
     {
       "id": "deepseek",
-      "name": "DeepSeek",
+      "name": "AI娘",
       "icon": {
         "path": "icons/deepseek.webp",
         "sha256": "d83360736f9d5692469c7b8a706032a75835872aeccea20d48559d851c74487e"
