@@ -1,0 +1,59 @@
+{
+  "format": "limea-character",
+  "formatVersion": 1,
+  "id": "org.limea.characters.zenless-zone-zero.ellen",
+  "version": "1.0.1",
+  "name": "艾莲·乔",
+  "description": "维多利亚家政的鲨鱼希人女仆。嫌麻烦、想早点下班，关键时刻却利落可靠；细写工作之外的学校、友情与自主生活，含1.5秘闻世界书。",
+  "author": {
+    "name": "CyreneBot",
+    "url": "https://github.com/CyreneBot"
+  },
+  "tags": [
+    "艾莲·乔",
+    "艾莲",
+    "Ellen Joe",
+    "维多利亚家政",
+    "简体中文"
+  ],
+  "files": [
+    {
+      "path": "assets/avatar.png",
+      "role": "avatar"
+    },
+    {
+      "path": "assets/cover.png",
+      "role": "cover"
+    },
+    {
+      "path": "assets/avatar-original.png",
+      "role": "gallery"
+    },
+    {
+      "path": "assets/portrait-original.png",
+      "role": "gallery"
+    },
+    {
+      "path": "README.md",
+      "role": "readme"
+    }
+  ],
+  "prompts": {
+    "fixed": [
+      "prompts/soul.md",
+      "prompts/reply-style.md"
+    ],
+    "worldbooks": [
+      "worldbook/ellen.md",
+      "worldbook/relationships.md",
+      "worldbook/story.md",
+      "worldbook/world.md"
+    ]
+  },
+  "extensions": {
+    "limea.work": {
+      "id": "zenless-zone-zero",
+      "name": "绝区零"
+    }
+  }
+}
