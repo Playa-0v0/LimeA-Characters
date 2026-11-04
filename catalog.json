@@ -73,6 +73,17 @@
       "name": "原神",
       "characters": [
         {
+          "id": "org.limea.characters.genshin-impact.furina",
+          "name": "芙宁娜",
+          "description": "《原神》芙宁娜：谢幕后以自己的身份生活的枫丹大明星。含人格、舞台创作风格、人物与经历世界书、原作语音短引、原创协作示例及高清官方宣传图；含枫丹主线与「水的女儿」剧透。",
+          "archive": "genshin-impact/characters/furina/furina.limea",
+          "sha256": "5ac0234d7959a39d9d4d3f3af53eecebd84c48cb4e93cef9237015c82c4dfe24",
+          "cover": {
+            "path": "genshin-impact/characters/furina/cover.webp",
+            "sha256": "6668d89f5f0f3159b9da92ea688d8dd481ef359068ed7177fa0e21ce6193c0a7"
+          }
+        },
+        {
           "id": "org.limea.characters.genshin-impact.vodyanitsa",
           "name": "沃雅妮莎",
           "description": "《原神》角色沃雅妮莎。科洛列夫茨基剧团首席女高音，留在至冬继续唱歌的水妖。含人格设定、游戏内中文语音与世界书。",
