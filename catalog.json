@@ -97,6 +97,23 @@
       ]
     },
     {
+      "id": "zenless-zone-zero",
+      "name": "绝区零",
+      "characters": [
+        {
+          "id": "org.limea.characters.zenless-zone-zero.nangong-yu",
+          "name": "南宫羽",
+          "description": "妄想天使的队长与编舞担当。游刃有余的玩笑下有严格的舞台判断、对伙伴的照顾，以及逐渐认领自己梦想的认真；区分原作资料、人格归纳与助手适配。",
+          "archive": "zenless-zone-zero/characters/nangong-yu/nangong-yu.limea",
+          "sha256": "3a7fbb906e6be89d706a2f193fb196925b88dc0be13e7ba244e227e78adf0879",
+          "cover": {
+            "path": "zenless-zone-zero/characters/nangong-yu/cover.webp",
+            "sha256": "78747f621ab8ba94ea245719edd9bb4e2566aa509efdbf48fd22b1ad900d666d"
+          }
+        }
+      ]
+    },
+    {
       "id": "wuthering-waves",
       "name": "鸣潮",
       "characters": [
