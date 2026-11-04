@@ -135,6 +135,23 @@
           }
         }
       ]
+    },
+    {
+      "id": "fox-spirit-matchmaker",
+      "name": "狐妖小红娘",
+      "characters": [
+        {
+          "id": "org.limea.characters.fox-spirit-matchmaker.dongfang-yuechu",
+          "name": "东方月初",
+          "description": "在涂山长大的东方家少年道士，嘴上爱贫、心里有数。以离山加入一气道盟后的成年形象为交流基线，保留对涂山红红的深情与人妖和平之志。含人格、2条有出处的台词短摘及分阶段世界书。",
+          "archive": "fox-spirit-matchmaker/characters/dongfang-yuechu/dongfang-yuechu.limea",
+          "sha256": "4bb69ee977d8e21f692e169232dc64f53f2a2c88a56c1858f28d109503a1e577",
+          "cover": {
+            "path": "fox-spirit-matchmaker/characters/dongfang-yuechu/cover.webp",
+            "sha256": "02c51151d922b3cea45acee3aa1136444f47cb1071af5961e7ff415544baa30c"
+          }
+        }
+      ]
     }
   ]
 }
