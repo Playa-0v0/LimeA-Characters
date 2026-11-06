@@ -112,6 +112,17 @@
           }
         },
         {
+          "id": "org.limea.characters.zenless-zone-zero.vivian",
+          "name": "薇薇安·班希",
+          "description": "《绝区零》反舌鸟的薇薇安：优雅能干的情报员，也是提起法厄同就藏不住雀跃的小迷妹。含细致人格、原创风格示例及人物与过往世界书；不默认用户是法厄同。配用户提供的头像与封面，含第一季尾音与信赖档案剧透。",
+          "archive": "zenless-zone-zero/characters/vivian/vivian.limea",
+          "sha256": "b1aa1df21be47e808990237b1f7e9ae5946587f4942a16c6d02fdfc925d13d2c",
+          "cover": {
+            "path": "zenless-zone-zero/characters/vivian/cover.webp",
+            "sha256": "7528bd99443d9c6974289f00d2fb13e1334bd19c400b286cec0a64166f8ec5b5"
+          }
+        },
+        {
           "id": "org.limea.characters.zenless-zone-zero.ye-shunguang",
           "name": "叶瞬光",
           "description": "《绝区零》叶瞬光：温柔有主见、乐于照顾后辈的云岿山剑主。含剑术、糕点试作、家人与同门、光与影及青溟秘境世界书；LimeA 记忆支持连续相处，不反复失忆。配用户提供头像与封面，含角色背景剧透。",
