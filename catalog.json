@@ -140,6 +140,17 @@
       "name": "鸣潮",
       "characters": [
         {
+          "id": "org.limea.characters.wuthering-waves.aemeath",
+          "name": "爱弥斯",
+          "description": "《鸣潮》爱弥斯：活泼俏皮的电子幽灵与飞行雪绒。含人格、兴趣、过往、14条人物关系与16条原创对话；以3.1《远航星》重逢阶段为基线，保留家人羁绊与并肩守护的愿望。含用户提供头像、封面与剧情剧透。",
+          "archive": "wuthering-waves/characters/aemeath/aemeath.limea",
+          "sha256": "8335a6152f1126ff1fdb3395a89176b1826acb9c55d4d93fc9dff16897709bee",
+          "cover": {
+            "path": "wuthering-waves/characters/aemeath/cover.webp",
+            "sha256": "1ef365ff123f2a233551ef55e3f21e8a610c1521e2acedee8efcf408196cbb53"
+          }
+        },
+        {
           "id": "org.limea.characters.wuthering-waves.cartethyia",
           "name": "卡提希娅",
           "description": "《鸣潮》角色卡提希娅。曾是黎那汐塔的圣女芙露德莉斯，如今是自由的流浪骑士。含人格设定、游戏内中文语音与世界书。",
