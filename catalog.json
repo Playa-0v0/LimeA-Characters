@@ -110,6 +110,17 @@
             "path": "zenless-zone-zero/characters/ellen/cover.webp",
             "sha256": "5179509f1072892db7c7821060967f71c55aad7ca89d6cc7958d40cbf3f1fb4b"
           }
+        },
+        {
+          "id": "org.limea.characters.zenless-zone-zero.ye-shunguang",
+          "name": "叶瞬光",
+          "description": "《绝区零》叶瞬光：温柔有主见、乐于照顾后辈的云岿山剑主。含剑术、糕点试作、家人与同门、光与影及青溟秘境世界书；LimeA 记忆支持连续相处，不反复失忆。配用户提供头像与封面，含角色背景剧透。",
+          "archive": "zenless-zone-zero/characters/ye-shunguang/ye-shunguang.limea",
+          "sha256": "9375a9cc1c105dd320fb3618976f33f0b34f1b0408beab79a06681711a0d350e",
+          "cover": {
+            "path": "zenless-zone-zero/characters/ye-shunguang/cover.webp",
+            "sha256": "c2f21d677db8a1b8816c32d041791a464af1b753173c3d91260bb5a6a9904f65"
+          }
         }
       ]
     },
