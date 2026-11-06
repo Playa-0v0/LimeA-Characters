@@ -160,6 +160,17 @@
             "path": "wuthering-waves/characters/denia/cover.webp",
             "sha256": "d5cbe6f389b7ee3990563963680e933f87389949f08fb8fff258bada65570d40"
           }
+        },
+        {
+          "id": "org.limea.characters.wuthering-waves.sigrika",
+          "name": "西格莉卡",
+          "description": "《鸣潮》西格莉卡：热心、好奇的罗伊族少女，在期待与自我选择之间成长。细写与达妮娅的陪伴、家人与学院羁绊，含用户提供的19条原作语音；以学院庆典后为基线，后续生日剧情分阶段触发。",
+          "archive": "wuthering-waves/characters/sigrika/sigrika.limea",
+          "sha256": "4c222e5392ddda4deca2b7c7ba5a5e82f881ab1e42603f2c828e1bc180edd954",
+          "cover": {
+            "path": "wuthering-waves/characters/sigrika/cover.webp",
+            "sha256": "df313ec72a98217470f7992478000b68db4755ac76b1bfddfc250f5f699c81fb"
+          }
         }
       ]
     },
