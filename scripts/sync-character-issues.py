@@ -8,6 +8,8 @@ import re
 import subprocess
 import sys
 import time
+import urllib.error
+import urllib.request
 import zipfile
 from pathlib import Path
 from urllib.parse import quote, urlencode
@@ -57,6 +59,89 @@ class GitHub:
             match = re.search(r"\(HTTP (\d{3})\)", result.stderr)
             raise ApiError(int(match.group(1)) if match else 0, result.stderr.strip())
         return json.loads(result.stdout) if result.stdout.strip() else None
+
+
+class GitCode:
+    """GitCode OpenAPI 只读列表与建议题；令牌只放查询参数且不进入日志。"""
+
+    def __init__(self, token, actor, base="https://api.gitcode.com/api/v5"):
+        if not re.fullmatch(r"[A-Za-z0-9_.-]+", actor):
+            raise ValueError("GitCode 令牌账号无效")
+        if not token:
+            raise ValueError("缺少 GitCode 访问令牌")
+        self.token = token
+        self.actor = actor
+        self.base = base
+        self.last_write = 0.0
+
+    @staticmethod
+    def repo_parts(repo):
+        if not re.fullmatch(r"[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+", repo):
+            raise ValueError("仓库地址无效")
+        return repo.split("/", 1)
+
+    def request(self, method, path, form=None, params=None):
+        if method in ("POST", "PUT", "PATCH", "DELETE"):
+            delay = 1 - (time.monotonic() - self.last_write)
+            if delay > 0:
+                time.sleep(delay)
+            self.last_write = time.monotonic()
+        query = dict(params or {})
+        query["access_token"] = self.token
+        url = f"{self.base}/{path}?{urlencode(query)}"
+        data = None if form is None else urlencode(form).encode("utf-8")
+        request = urllib.request.Request(url, data=data, method=method)
+        if data is not None:
+            request.add_header("Content-Type", "application/x-www-form-urlencoded")
+        request.add_header("Accept", "application/json")
+        request.add_header("User-Agent", "LimeA-Character-Issues/1.0")
+        try:
+            with urllib.request.urlopen(request, timeout=120) as response:
+                raw = response.read()
+        except urllib.error.HTTPError as error:
+            detail = error.read().decode("utf-8", "replace").replace(self.token, "[redacted]")
+            raise ApiError(error.code, f"GitCode API 失败：{detail[:300]}") from error
+        except urllib.error.URLError as error:
+            raise ApiError(0, f"GitCode 网络错误：{error.reason}") from error
+        if not raw.strip():
+            return None
+        try:
+            return json.loads(raw.decode("utf-8"))
+        except (UnicodeError, json.JSONDecodeError) as error:
+            raise ValueError("GitCode 返回不是有效的 UTF-8 JSON") from error
+
+    def issues(self, repo):
+        owner, name = self.repo_parts(repo)
+        result = []
+        for page in range(1, 51):
+            rows = self.request(
+                "GET",
+                f"repos/{quote(owner, safe='')}/{quote(name, safe='')}/issues",
+                params={"state": "all", "per_page": 100, "page": page},
+            )
+            if not isinstance(rows, list):
+                raise ValueError("GitCode 议题列表格式无效")
+            result.extend(rows)
+            if len(rows) < 100:
+                return result
+        raise ValueError("GitCode 议题分页超过上限")
+
+    def create_issue(self, repo, title, body):
+        owner, name = self.repo_parts(repo)
+        try:
+            return self.request(
+                "POST",
+                f"repos/{quote(owner, safe='')}/issues",
+                form={"repo": name, "title": title, "body": body},
+            )
+        except ApiError as error:
+            if error.status != 404:
+                raise
+        return self.request(
+            "POST",
+            f"repos/{quote(owner, safe='')}/{quote(name, safe='')}/issues",
+            form={"title": title, "body": body},
+        )
 
 
 def unique_object(pairs):
@@ -162,9 +247,32 @@ def get_file(api, repo, path, branch):
     return content, result["sha"]
 
 
-def load_mapping(api, repo, branch):
-    raw, sha = get_file(api, repo, "community.json", branch)
-    return ({} if raw is None else check_issue_map(parse_json(raw, "community.json"))), sha
+def load_mapping(api, repo, branch, filename="community.json"):
+    raw, sha = get_file(api, repo, filename, branch)
+    return ({} if raw is None else check_issue_map(parse_json(raw, filename))), sha
+
+
+def issue_number(value):
+    if isinstance(value, str) and value.isdigit():
+        value = int(value)
+    return value if type(value) is int and 1 <= value <= 2147483647 else None
+
+
+def collect_issue_markers(issues, needed, login):
+    found = {}
+    for issue in issues:
+        if not isinstance(issue, dict) or issue.get("pull_request") or (issue.get("user") or {}).get("login") != login:
+            continue
+        for character_id in set(MARKER.findall(issue.get("body") or "")):
+            if character_id not in needed:
+                continue
+            number = issue_number(issue.get("number"))
+            if number is None:
+                raise ValueError("已有议题编号无效")
+            if character_id in found and found[character_id] != number:
+                raise ValueError(f"角色存在多个自动创建的议题：{character_id}")
+            found[character_id] = number
+    return found
 
 
 def existing_issues(api, repo, needed):
@@ -172,24 +280,42 @@ def existing_issues(api, repo, needed):
     pages = api.request("GET", f"repos/{repo}/issues?{query}", paginate=True)
     if not isinstance(pages, list):
         raise ValueError("议题列表格式无效")
-    found = {}
+    flat = []
     for page in pages:
         if not isinstance(page, list):
             raise ValueError("议题分页格式无效")
-        for issue in page:
-            if not isinstance(issue, dict) or issue.get("pull_request") or (issue.get("user") or {}).get("login") != "github-actions[bot]":
-                continue
-            matches = MARKER.findall(issue.get("body") or "")
-            for character_id in set(matches):
-                if character_id not in needed:
-                    continue
-                number = issue.get("number")
-                if type(number) is not int or not 1 <= number <= 2147483647:
-                    raise ValueError("已有议题编号无效")
-                if character_id in found and found[character_id] != number:
-                    raise ValueError(f"角色存在多个自动创建的议题：{character_id}")
-                found[character_id] = number
-    return found
+        flat.extend(page)
+    return collect_issue_markers(flat, needed, "github-actions[bot]")
+
+
+def update_mapping(api, repo, branch, filename, catalog_raw, additions, message, log=print):
+    # 在角色发生并发修改时停止；下一次运行从已有议题的标记恢复。
+    latest_catalog, _ = get_file(api, repo, "catalog.json", branch)
+    if latest_catalog != catalog_raw:
+        raise ValueError("角色清单已变化，请重新运行以核对")
+    for _ in range(3):
+        latest, sha = load_mapping(api, repo, branch, filename)
+        merged = dict(latest)
+        for character_id, number in additions.items():
+            merged.setdefault(character_id, number)
+        if merged == latest:
+            log("议题映射已由其他操作写入")
+            return
+        check_issue_map({"version": 1, "issues": merged})
+        content = (json.dumps({"version": 1, "issues": merged}, ensure_ascii=False, indent=2) + "\n").encode("utf-8")
+        if len(content) > MAX_CATALOG:
+            raise ValueError(f"{filename} 超过大小限制")
+        payload = {"message": message, "content": base64.b64encode(content).decode("ascii"), "branch": branch}
+        if sha is not None:
+            payload["sha"] = sha
+        try:
+            api.request("PUT", f"repos/{repo}/contents/{filename}", payload)
+            log(f"已更新 {filename}")
+            return
+        except ApiError as error:
+            if error.status != 409 and not (error.status == 422 and "sha" in str(error).lower()):
+                raise
+    raise ValueError("议题映射多次发生冲突，请重跑")
 
 
 def sync(api, repo, branch, root, log=print):
@@ -217,43 +343,58 @@ def sync(api, repo, branch, root, log=print):
             link = f"https://github.com/{repo}/blob/{branch}/{quote(character['archive'], safe='/')}"
             body = f"这个议题用于讨论 LimeA 角色卡。欢迎分享使用体验、反馈问题，或为角色点赞。\n\n角色标识：`{character_id}`\n\n[查看角色卡]({link})\n\n<!-- limea-character-id: {character_id} -->\n"
             issue = api.request("POST", f"repos/{repo}/issues", {"title": f"角色讨论：{safe_name}", "body": body})
-            number = issue.get("number") if isinstance(issue, dict) else None
-            if type(number) is not int or not 1 <= number <= 2147483647:
+            number = issue_number(issue.get("number")) if isinstance(issue, dict) else None
+            if number is None:
                 raise ValueError("创建议题未返回有效编号，请重跑以核对")
             log(f"已创建议题：{character_id} -> #{number}")
         additions[character_id] = number
-    # 在角色发生并发修改时停止；下一次运行从已有议题的标记恢复。
-    latest_catalog, _ = get_file(api, repo, "catalog.json", branch)
-    if latest_catalog != catalog_raw:
-        raise ValueError("角色清单已变化，请重新运行以核对")
-    for _ in range(3):
-        latest, sha = load_mapping(api, repo, branch)
-        merged = dict(latest)
-        for character_id, number in additions.items():
-            merged.setdefault(character_id, number)
-        if merged == latest:
-            log("议题映射已由其他操作写入")
-            return
-        check_issue_map({"version": 1, "issues": merged})
-        content = (json.dumps({"version": 1, "issues": merged}, ensure_ascii=False, indent=2) + "\n").encode("utf-8")
-        if len(content) > MAX_CATALOG:
-            raise ValueError("community.json 超过大小限制")
-        payload = {"message": "chore(角色商店): 更新角色议题映射", "content": base64.b64encode(content).decode("ascii"), "branch": branch}
-        if sha is not None:
-            payload["sha"] = sha
-        try:
-            api.request("PUT", f"repos/{repo}/contents/community.json", payload)
-            log("已更新角色议题映射")
-            return
-        except ApiError as error:
-            if error.status != 409 and not (error.status == 422 and "sha" in str(error).lower()):
-                raise
-    raise ValueError("议题映射多次发生冲突，请重跑")
+    update_mapping(api, repo, branch, "community.json", catalog_raw, additions, "chore(角色商店): 更新角色议题映射", log)
+
+
+def sync_gitcode(api, gitcode, repo, branch, root, log=print):
+    if not re.fullmatch(r"[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+", repo) or branch != "main":
+        raise ValueError("仓库或分支无效")
+    catalog_raw, characters = read_characters(root)
+    filename = "community-gitcode.json"
+    mapping, _ = load_mapping(api, repo, branch, filename)
+    missing = {key for key in characters if key not in mapping}
+    if not missing:
+        log("所有角色都已关联 GitCode 议题")
+        return
+    if len(mapping) + len(missing) > 5000:
+        raise ValueError("角色议题映射数量超过限制")
+    found = collect_issue_markers(gitcode.issues(repo), missing, gitcode.actor)
+    additions = {}
+    for character_id in sorted(missing):
+        if character_id in found:
+            number = found[character_id]
+            log(f"找回已有 GitCode 议题：{character_id} -> #{number}")
+        else:
+            character = characters[character_id]
+            safe_name = re.sub(r"[\x00-\x1f\x7f@]+", " ", character["name"]).strip()
+            if not safe_name:
+                raise ValueError("角色名称不能仅包含控制字符")
+            link = f"https://gitcode.com/{repo}/blob/{branch}/{quote(character['archive'], safe='/')}"
+            body = f"这个议题用于讨论 LimeA 角色卡。欢迎分享使用体验、反馈问题，或为角色点赞。\n\n角色标识：`{character_id}`\n\n[查看角色卡]({link})\n\n<!-- limea-character-id: {character_id} -->\n"
+            issue = gitcode.create_issue(repo, f"角色讨论：{safe_name}", body)
+            number = issue_number(issue.get("number")) if isinstance(issue, dict) else None
+            if number is None:
+                raise ValueError("GitCode 创建议题未返回有效编号，请重跑以核对")
+            log(f"已创建 GitCode 议题：{character_id} -> #{number}")
+        additions[character_id] = number
+    update_mapping(api, repo, branch, filename, catalog_raw, additions, "chore(角色商店): 更新 GitCode 角色议题映射", log)
 
 
 if __name__ == "__main__":
     try:
-        sync(GitHub(), os.environ["GITHUB_REPOSITORY"], "main", Path.cwd())
+        if "--gitcode" in sys.argv[1:]:
+            token = os.environ.get("GITCODE_TOKEN", "")
+            actor = os.environ.get("GITCODE_ACTOR", "")
+            if not token or not actor:
+                raise ValueError("缺少 GITCODE_TOKEN 或 GITCODE_ACTOR")
+            sync_gitcode(GitHub(), GitCode(token, actor), os.environ["GITHUB_REPOSITORY"], "main", Path.cwd())
+        else:
+            sync(GitHub(), os.environ["GITHUB_REPOSITORY"], "main", Path.cwd())
     except (ApiError, KeyError, OSError, ValueError, subprocess.SubprocessError) as error:
         print(f"角色议题同步失败：{error}", file=sys.stderr)
         sys.exit(1)

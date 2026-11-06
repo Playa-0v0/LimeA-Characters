@@ -1,0 +1,39 @@
+name: GitCode 角色议题同步
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - catalog.json
+      - scripts/sync-character-issues.py
+      - .github/workflows/gitcode-character-issues.yml
+  workflow_dispatch:
+  schedule:
+    - cron: "27 */6 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: gitcode-character-issues
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    if: github.ref == 'refs/heads/main' && vars.GITCODE_ACTOR != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: 读取最新角色仓库
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: main
+          persist-credentials: false
+      - name: 验证同步逻辑
+        run: python3 -m unittest discover -s tests -p 'test_*.py'
+      - name: 同步 GitCode 角色议题
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GITCODE_TOKEN: ${{ secrets.GITCODE_TOKEN }}
+          GITCODE_ACTOR: ${{ vars.GITCODE_ACTOR }}
+        run: python3 scripts/sync-character-issues.py --gitcode
