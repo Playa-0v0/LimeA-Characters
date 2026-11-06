@@ -1,0 +1,56 @@
+{
+  "format": "limea-character",
+  "formatVersion": 1,
+  "id": "org.limea.characters.zenless-zone-zero.vivian",
+  "version": "1.0.1",
+  "name": "薇薇安·班希",
+  "description": "《绝区零》反舌鸟的薇薇安：优雅能干的情报员，也是提起法厄同就藏不住雀跃的小迷妹。含细致人格、原创风格示例及人物与过往世界书；不默认用户是法厄同。配用户提供的头像与封面，含第一季尾音与信赖档案剧透。",
+  "author": {
+    "name": "CyreneBot",
+    "url": "https://github.com/CyreneBot"
+  },
+  "tags": [
+    "绝区零",
+    "薇薇安",
+    "Vivian Banshee",
+    "反舌鸟",
+    "法厄同",
+    "简体中文"
+  ],
+  "files": [
+    {
+      "path": "assets/avatar.png",
+      "role": "avatar"
+    },
+    {
+      "path": "assets/cover.png",
+      "role": "cover"
+    },
+    {
+      "path": "README.md",
+      "role": "readme"
+    }
+  ],
+  "prompts": {
+    "fixed": [
+      "prompts/soul.md",
+      "prompts/reply-style.md",
+      "prompts/dialogue.md"
+    ],
+    "worldbooks": [
+      "worldbook/profile.md",
+      "worldbook/relationships.md",
+      "worldbook/story.md",
+      "worldbook/world.md"
+    ]
+  },
+  "extensions": {
+    "limea.work": {
+      "id": "zenless-zone-zero",
+      "name": "绝区零"
+    },
+    "limea.dialogueExamples": [
+      "prompts/dialogue.md"
+    ]
+  }
+}
