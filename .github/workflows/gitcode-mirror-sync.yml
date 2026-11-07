@@ -1,0 +1,76 @@
+name: GitCode 镜像同步
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: gitcode-mirror-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: 读取最新 main
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: false
+      - name: 尝试触发 GitCode 源仓库同步
+        id: trigger
+        env:
+          GITCODE_TOKEN: ${{ secrets.GITCODE_TOKEN }}
+        run: |
+          set -euo pipefail
+          result=$(curl -sS -w '\n%{http_code}' -X PUT \
+            "https://api.gitcode.com/api/v5/repos/Playa-LimeA/LimeA-Characters/sync_repo?access_token=${GITCODE_TOKEN}" \
+            -H 'Content-Type: application/json' \
+            -d '{"branch":"main"}' || true)
+          code=${result##*$'\n'}
+          payload=${result%$'\n'*}
+          echo "GitCode sync_repo: HTTP ${code} ${payload}"
+          if [ "${code}" != "200" ] || ! printf '%s' "${payload}" | grep -q '"repo_sync_result":true'; then
+            echo "triggered=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          local_sha=$(git rev-parse HEAD)
+          for attempt in 1 2 3 4 5 6; do
+            sleep 10
+            remote_sha=$(git ls-remote https://gitcode.com/Playa-LimeA/LimeA-Characters.git refs/heads/main | cut -f1)
+            echo "attempt ${attempt}: gitcode=${remote_sha} github=${local_sha}"
+            if [ "${remote_sha}" = "${local_sha}" ]; then
+              echo "triggered=true" >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
+          done
+          echo "triggered=false" >> "$GITHUB_OUTPUT"
+      - name: 直接推送 main 到 GitCode
+        if: steps.trigger.outputs.triggered != 'true'
+        env:
+          GITCODE_TOKEN: ${{ secrets.GITCODE_TOKEN }}
+          GITCODE_ACTOR: ${{ vars.GITCODE_ACTOR || secrets.GITCODE_ACTOR }}
+          GIT_TERMINAL_PROMPT: '0'
+        run: |
+          set -euo pipefail
+          if [ -z "${GITCODE_ACTOR:-}" ]; then
+            echo "GITCODE_ACTOR 未配置" >&2
+            exit 1
+          fi
+          for attempt in 1 2 3; do
+            if git push --force \
+              "https://${GITCODE_ACTOR}:${GITCODE_TOKEN}@gitcode.com/Playa-LimeA/LimeA-Characters.git" \
+              HEAD:main; then
+              echo "第 ${attempt} 次推送成功"
+              exit 0
+            fi
+            echo "第 ${attempt} 次推送失败，稍后重试" >&2
+            sleep 10
+          done
+          exit 1
