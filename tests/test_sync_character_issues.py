@@ -14,9 +14,10 @@ spec.loader.exec_module(module)
 
 
 class FakeGitHub:
-    def __init__(self, catalog, mapping=None, issues=None):
+    def __init__(self, catalog, mapping=None, gitcode_mapping=None, issues=None):
         self.catalog = catalog
         self.mapping = mapping
+        self.gitcode_mapping = gitcode_mapping
         self.issues = issues or []
         self.created = []
         self.writes = 0
@@ -26,10 +27,27 @@ class FakeGitHub:
     def request(self, method, path, payload=None, paginate=False):
         if method == "GET" and path.startswith("repos/example/repo/contents/catalog.json?"):
             return self.file(self.catalog)
-        if method == "GET" and path.startswith("repos/example/repo/contents/community.json?"):
-            if self.mapping is None:
-                raise module.ApiError(404, "missing")
-            return self.file(json.dumps({"version": 1, "issues": self.mapping}).encode())
+        for filename, attribute in (
+            ("community.json", "mapping"),
+            ("community-gitcode.json", "gitcode_mapping"),
+        ):
+            if method == "GET" and path.startswith(f"repos/example/repo/contents/{filename}?"):
+                mapping = getattr(self, attribute)
+                if mapping is None:
+                    raise module.ApiError(404, "missing")
+                return self.file(json.dumps({"version": 1, "issues": mapping}).encode())
+            if method == "PUT" and path == f"repos/example/repo/contents/{filename}":
+                self.writes += 1
+                if self.fail_write:
+                    self.fail_write = False
+                    raise module.ApiError(500, "interrupted")
+                if self.conflict is not None:
+                    setattr(self, attribute, self.conflict)
+                    self.conflict = None
+                    raise module.ApiError(409, "conflict")
+                parsed = json.loads(base64.b64decode(payload["content"]))
+                setattr(self, attribute, parsed["issues"])
+                return {}
         if method == "GET" and path.startswith("repos/example/repo/issues?"):
             if not paginate:
                 raise AssertionError("缺少分页")
@@ -40,23 +58,30 @@ class FakeGitHub:
             self.issues.append(issue)
             self.created.append(payload)
             return issue
-        if method == "PUT" and path == "repos/example/repo/contents/community.json":
-            self.writes += 1
-            if self.fail_write:
-                self.fail_write = False
-                raise module.ApiError(500, "interrupted")
-            if self.conflict is not None:
-                self.mapping = self.conflict
-                self.conflict = None
-                raise module.ApiError(409, "conflict")
-            parsed = json.loads(base64.b64decode(payload["content"]))
-            self.mapping = parsed["issues"]
-            return {}
         raise AssertionError((method, path))
 
     @staticmethod
     def file(raw):
         return {"type": "file", "encoding": "base64", "sha": hashlib.sha1(raw).hexdigest(), "content": base64.b64encode(raw).decode()}
+
+
+class FakeGitCode:
+    def __init__(self, actor="gitcode-bot", issues=None):
+        self.actor = actor
+        self.issue_list = issues or []
+        self.created = []
+
+    def issues(self, repo):
+        if repo != "example/repo":
+            raise AssertionError(repo)
+        return self.issue_list.copy()
+
+    def create_issue(self, repo, title, body):
+        number = len(self.issue_list) + 1
+        issue = {"number": number, "user": {"login": self.actor}, "title": title, "body": body}
+        self.issue_list.append(issue)
+        self.created.append({"title": title, "body": body})
+        return issue
 
 
 class IssueSyncTest(unittest.TestCase):
@@ -156,6 +181,45 @@ class IssueSyncTest(unittest.TestCase):
             self.sync()
         self.assertEqual(self.api.created, [])
         self.assertEqual(self.api.mapping, {"test.character": 0})
+
+
+    def sync_gitcode(self, gitcode):
+        module.sync_gitcode(
+            self.api, gitcode, "example/repo", "main", self.root, log=lambda *args: None
+        )
+
+    def test_gitcode_creates_separate_mapping_and_issue(self):
+        gitcode = FakeGitCode()
+        self.sync_gitcode(gitcode)
+        self.assertEqual(self.api.gitcode_mapping, {"test.character": 1})
+        self.assertIsNone(self.api.mapping)
+        self.assertIn("<!-- limea-character-id: test.character -->", gitcode.created[0]["body"])
+        self.assertIn(
+            "https://gitcode.com/example/repo/blob/main/game/character.limea",
+            gitcode.created[0]["body"],
+        )
+        self.assertEqual(gitcode.created[0]["title"], "角色讨论：测试角色")
+        self.sync_gitcode(gitcode)
+        self.assertEqual(len(gitcode.created), 1)
+        self.assertEqual(self.api.writes, 1)
+
+    def test_gitcode_reuses_issue_created_before_mapping_write(self):
+        gitcode = FakeGitCode()
+        self.api.fail_write = True
+        with self.assertRaises(module.ApiError):
+            self.sync_gitcode(gitcode)
+        self.assertEqual(len(gitcode.created), 1)
+        self.assertIsNone(self.api.gitcode_mapping)
+        self.sync_gitcode(gitcode)
+        self.assertEqual(len(gitcode.created), 1)
+        self.assertEqual(self.api.gitcode_mapping, {"test.character": 1})
+
+    def test_gitcode_ignores_marker_from_other_actor(self):
+        marker = "<!-- limea-character-id: test.character -->"
+        gitcode = FakeGitCode(issues=[{"number": 9, "user": {"login": "other-user"}, "body": marker}])
+        self.sync_gitcode(gitcode)
+        self.assertEqual(self.api.gitcode_mapping, {"test.character": 2})
+        self.assertEqual(len(gitcode.created), 1)
 
 
 if __name__ == "__main__":

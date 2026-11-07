@@ -101,3 +101,5 @@ python -m unittest discover -s tests -p 'test_*.py' -v
 `community.json` 由工作流维护，请不要手工修改。清单的 `id`、`name` 必须与角色卡中的 `character.json` 一致，`sha256` 必须与实际 `.limea` 文件一致；完整导入校验仍由 LimeA 负责。自动化测试命令见上方「构建与验证」。
 
 工作流依赖 GitHub 提供的 `gh` 命令、Python 标准库以及仓库令牌的 `issues: write` 和 `contents: write` 权限。令牌由 GitHub 自动提供，不需要将个人令牌写入仓库。若分支保护禁止工作流提交，映射写入会失败，可调整仓库权限后手动重跑。
+
+GitCode 使用独立的议题体系。`gitcode-character-issues.yml` 通过 GitCode OpenAPI 为缺少映射的角色建立议题，并把编号写入 `community-gitcode.json`；该文件同样由工作流维护，请不要手工修改。需要在仓库设置中配置 `GITCODE_TOKEN`（GitCode 个人访问令牌，至少具备议题写入权限）Secret 和 `GITCODE_ACTOR`（令牌对应的 GitCode 用户名）Variable；未配置 `GITCODE_ACTOR` 时该工作流会跳过。GitHub 与 GitCode 的议题编号互不通用，LimeA 会根据当前下载源读取对应映射。
