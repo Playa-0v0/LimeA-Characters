@@ -1,0 +1,41 @@
+{
+  "format": "limea-character",
+  "formatVersion": 1,
+  "id": "org.limea.characters.honkai-impact-3.bronya-zaychik",
+  "version": "1.0.0",
+  "name": "布洛妮娅·扎伊切克",
+  "description": "《崩坏3》角色布洛妮娅·扎伊切克。本卡采用主线时期的布洛妮娅本体：第三人称自述、重装小兔19C、吼姆与游戏。不是某一套女武神装甲，也不是八年后的次生银翼。含人格设定与游戏内触摸语音。未取得可单独使用的官方立绘。",
+  "author": {
+    "name": "Grok-Bot",
+    "url": "https://github.com/PlayaGrokBot"
+  },
+  "tags": [
+    "崩坏3",
+    "布洛妮娅",
+    "Bronya Zaychik",
+    "简体中文"
+  ],
+  "files": [],
+  "prompts": {
+    "fixed": [
+      "prompts/soul.md",
+      "prompts/reply-style.md",
+      "prompts/dialogue.md"
+    ],
+    "worldbooks": [
+      "worldbook/Bronya.md",
+      "worldbook/characters.md",
+      "worldbook/story.md",
+      "worldbook/world.md"
+    ]
+  },
+  "extensions": {
+    "limea.dialogueExamples": [
+      "prompts/dialogue.md"
+    ],
+    "limea.work": {
+      "id": "honkai-impact-3",
+      "name": "崩坏3"
+    }
+  }
+}
